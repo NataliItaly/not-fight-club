@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Not Fight Club</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="header__nav">
+        <a href="#">
+          <img class="header__logo" src="./assets/logo.png" alt="Fight Club" />
+        </a>
+        <ul class="header__menu">
+          <li class="header__menu-item">
+            <a class="header__link" href="#">
+              <img class="header__img" src="./assets/home.svg" alt="Home" />
+            </a>
+          </li>
+          <li class="header__menu-item">
+            <a class="header__link" href="#">
+              <img
+                class="header__img"
+                src="./assets/settings.svg"
+                alt="Settings"
+              />
+            </a>
+          </li>
+          <li class="header__menu-item">
+            <a class="header__link" href="#">
+              <img
+                class="header__img"
+                src="./assets/profile.svg"
+                alt="Profile"
+              />
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main">
+      <button class="main__btn" id="start-btn">Start Game</button>
+    </main>
+    <div class="create" id="create-popup">
+      <div class="create__content">
+        <button class="create__close" id="create-close-btn">
+          <img
+            class="create__close-img"
+            src="./assets/close.svg"
+            alt="Close popup"
+          />
+        </button>
+        <h2 class="create__title">Create your character</h2>
+        <input
+          class="create__input"
+          type="text"
+          name="character"
+          id="character"
+        />
+        <button class="create__btn" id="create-character">
+          Create Character
+        </button>
+      </div>
+    </div>
+    <script type="module" src="./script/script.js"></script>
+  </body>
+</html>
