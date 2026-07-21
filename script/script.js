@@ -16,3 +16,5 @@ createCheracterBtn.addEventListener('click', function () {
   const createPopup = document.getElementById('create-popup');
   createPopup.classList.remove('create_open');
 });
+
+// https://www.swapi.tech/api/

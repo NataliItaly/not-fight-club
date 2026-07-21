@@ -58,16 +58,21 @@
             alt="Close popup"
           />
         </button>
-        <h2 class="create__title">Create your character</h2>
-        <input
-          class="create__input"
-          type="text"
-          name="character"
-          id="character"
-        />
-        <button class="create__btn" id="create-character">
-          Create Character
-        </button>
+        <form class="create__form">
+          <label for="character" class="create__label">
+            Create your character
+          </label>
+          <input
+            class="create__input"
+            type="text"
+            name="character"
+            id="character"
+            required
+          />
+          <button class="create__btn" id="create-character">
+            Create Character
+          </button>
+        </form>
       </div>
     </div>
     <script type="module" src="./script/script.js"></script>
