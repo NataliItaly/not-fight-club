@@ -14,6 +14,9 @@
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
   </head>
   <body>
+    <video class="video" id="video-bg" autoplay muted loop playsinline>
+      <source src="./assets/space-bg.mp4" type="video/mp4" />
+    </video>
     <header class="header">
       <nav class="header__nav">
         <a href="#">
@@ -49,32 +52,51 @@
     <main class="main">
       <button class="main__btn" id="start-btn">Start Game</button>
     </main>
-    <div class="create" id="create-popup">
-      <div class="create__content">
-        <button class="create__close" id="create-close-btn">
-          <img
-            class="create__close-img"
-            src="./assets/close.svg"
-            alt="Close popup"
-          />
-        </button>
-        <form class="create__form">
-          <label for="character" class="create__label">
-            Create your character
-          </label>
-          <input
-            class="create__input"
-            type="text"
-            name="character"
-            id="character"
-            required
-          />
-          <button class="create__btn" id="create-character">
-            Create Character
+    <div class="popup" id="popup">
+      <button class="popup__close">
+        <img src="./assets/close.svg" alt="Close popup" />
+      </button>
+      <div class="popup__tab choose-character">
+        <h2 class="popup__title choose-character__title">
+          Where do you want to fight?
+        </h2>
+        <ul class="list choose-character__list" id="choose-character-list"></ul>
+        <button class="btn btn_next" id="choose-character-btn">Next</button>
+      </div>
+      <div class="popup__tab create" id="create-popup">
+        <div class="create__content">
+          <form class="create__form">
+            <label for="character" class="popup__title">
+              Create your character
+            </label>
+            <input
+              class="create__input"
+              type="text"
+              name="character"
+              id="character"
+              required
+            />
+            <button class="create__btn" id="create-character">
+              Create Character
+            </button>
+          </form>
+          <button class="btn btn_next" id="choose-character-btn">Next</button>
+        </div>
+      </div>
+      <div class="popup__tab locations" id="locations-popup">
+        <div class="locations__content">
+          <h2 class="popup__title locations__title">
+            Where do you want to fight?
+          </h2>
+          <button class="locations__btn" id="get-random-location">
+            Get Random Location
           </button>
-        </form>
+          <ul class="list locations__list" id="locations-list"></ul>
+          <button class="btn btn_next" id="choose-character-btn">Next</button>
+        </div>
       </div>
     </div>
+    <div class="fight-screen"></div>
     <script type="module" src="./script/script.js"></script>
   </body>
 </html>
