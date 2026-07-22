@@ -4,8 +4,8 @@ export default function locationsPopup() {
   const list = document.getElementById('locations-list');
   locations.forEach((loc) => {
     const li = `
-      <li class="locations__item" id=${loc.id}>
-        <img class="locations__img" src="./assets/locations/${loc.id}.webp" alt="" />
+      <li class="list__item locations__item" id=${loc.id}>
+        <img class="list__img" src="./assets/locations/${loc.id}.webp" alt="" />
       </li>
     `;
     list.insertAdjacentHTML('beforeend', li);
@@ -13,8 +13,8 @@ export default function locationsPopup() {
   console.log(list);
 
   list.addEventListener('click', function (e) {
-    if (e.target.closest('.locations__item')) {
-      console.log(e.target.closest('.locations__item').id);
+    if (e.target.closest('.list__item')) {
+      console.log(e.target.closest('.list__item').id);
     }
   });
 }

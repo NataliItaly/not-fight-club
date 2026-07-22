@@ -1,0 +1,25 @@
+export default function popup(tab) {
+  const popup = document.getElementById('popup');
+
+  popup.addEventListener('click', function (e) {
+    if (e.target.classList.contains('btn_next')) {
+      const tabs = popup.querySelectorAll('.popup__tab');
+      tabs.forEach((t) => t.classList.remove('popup__tab_active'));
+      if (tab.index < 2) {
+        tab.index += 1;
+        const currentTab = tabs[tab.index];
+        currentTab.classList.add('popup__tab_active');
+      } else {
+        tab.index = 0;
+        popup.classList.remove('popup_open');
+      }
+    }
+
+    if (e.target.classList.contains('popup__close')) {
+      const tabs = popup.querySelectorAll('.popup__tab');
+      tabs.forEach((t) => t.classList.remove('popup__tab_active'));
+      popup.classList.remove('popup_open');
+      tab.index = 0;
+    }
+  });
+}
