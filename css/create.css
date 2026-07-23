@@ -48,8 +48,6 @@
   position: relative;
 }
 
-
-
 .create__close:hover {
   opacity: 0.7;
 }
@@ -81,7 +79,7 @@
   justify-content: center;
   align-items: center;
   color: #fff;
-  background: #ff101f;
+  background: linear-gradient(45deg, #c90677, #19f6c7);
   font-family: 'Press Start 2P', system-ui;
   font-size: 20px;
   padding: 15px 25px;
@@ -93,7 +91,8 @@
 }
 
 .create__input {
-  border: 1px solid #ff101f;
+  border: 5px solid;
+  border-image: linear-gradient(45deg, #c90677, #19f6c7) 1;
   padding: 10px 20px;
   border-radius: 10px;
   font-family: 'Orbitron', sans-serif;
@@ -106,7 +105,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  background: #ff101f;
+  background: linear-gradient(45deg, #c90677, #19f6c7);
   opacity: 0;
 }
 
