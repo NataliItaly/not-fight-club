@@ -14,6 +14,11 @@
   overflow: hidden;
 }
 
+.list__item_vertical {
+  flex: 0 0 200px;
+  height: 200px;
+}
+
 .list__img {
   width: 100%;
   height: 100%;
