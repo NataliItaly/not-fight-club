@@ -1,7 +1,9 @@
+import { character } from './state.js';
+
 export default function chooseCharacter() {
   const list = document.getElementById('choose-character-list');
 
-  Array.from({ length: 15 }, (_, i) => i + 1).forEach((_, i) => {
+  Array.from({ length: 10 }, (_, i) => i + 1).forEach((_, i) => {
     const li = `
         <li class="list__item list__item_vertical choose-character__item" id=${i + 1}>
           <img class="list__img" src="./assets/aliens/${i + 1}.png" alt="Alien character" />
@@ -13,7 +15,7 @@ export default function chooseCharacter() {
 
   list.addEventListener('click', function (e) {
     if (e.target.closest('.list__item')) {
-      console.log(e.target.closest('.list__item').id);
+      character.id = e.target.closest('.list__item').id;
     }
   });
 }

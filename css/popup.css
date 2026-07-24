@@ -48,6 +48,7 @@
 .popup__tab {
   width: 100%;
   height: fit-content;
+  min-height: 100vh;
   padding: 60px 20px 20px;
   display: none;
   opacity: 0;
@@ -73,7 +74,9 @@
 
 .popup__title {
   color: #fff;
-  text-shadow: 0 0 0 #000;
+  background: -webkit-linear-gradient(#19f6c7, #c90677);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-family: 'Press Start 2P', system-ui;
   font-size: 20px;
   text-align: center;

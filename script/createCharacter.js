@@ -1,4 +1,4 @@
-import { state } from './state';
+import { character } from './state';
 
 export function createCharacter() {
   const form = document.querySelector('.create__form');
@@ -6,10 +6,10 @@ export function createCharacter() {
   form.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    const character = form.querySelector('#character');
-    if (character) {
-      state.character = character.value;
-      console.log(state);
+    const name = form.querySelector('#character').value;
+    if (name) {
+      character.name = name;
+      console.log(character);
     }
   });
 }

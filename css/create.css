@@ -43,9 +43,10 @@
 
 .create__content {
   padding: 30px 20px;
-  background: #fff;
+  max-width: 600px;
   border-radius: 10px;
   position: relative;
+  margin: 0 auto;
 }
 
 .create__close:hover {

@@ -39,7 +39,8 @@
 .locations__list {
 }
 
-.locations__item {
+.locations__img:hover {
+  transform: scale(1.5);
 }
 
 .locations__img {

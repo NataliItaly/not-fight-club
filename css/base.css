@@ -18,6 +18,7 @@ body {
   font-family: 'Orbitron', sans-serif;
   font-size: 18px;
   font-style: normal;
+  background: url(../assets/body-bg.png);
   position: relative;
 }
 
@@ -33,4 +34,22 @@ body {
 
 .transparent {
   opacity: 0;
+}
+
+.btn_next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-shadow: 0 0 5px #000;
+  background: #3c0559;
+  font-family: 'Press Start 2P', system-ui;
+  font-size: 13px;
+  padding: 12px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+  position: relative;
+  overflow: hidden;
+  margin: 20px auto;
 }
