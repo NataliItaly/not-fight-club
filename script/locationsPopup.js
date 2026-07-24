@@ -1,5 +1,6 @@
 import { locations } from './data/location.js';
-import { character } from './state.js';
+import { character, constants } from './state.js';
+import getRandomNumber from './utils/getRandomNumber.js';
 
 export default function locationsPopup() {
   const list = document.getElementById('locations-list');
@@ -11,16 +12,26 @@ export default function locationsPopup() {
     `;
     list.insertAdjacentHTML('beforeend', li);
   });
-  console.log(list);
+  //console.log(list);
 
   list.addEventListener('click', function (e) {
     if (e.target.closest('.list__item')) {
       character.location = e.target.closest('.list__item').id;
       const listItems = list.querySelectorAll('.list__item');
-      console.log(listItems);
+
       listItems.forEach((item) => item.classList.add('list__item_fade'));
       e.target.closest('.list__item').classList.remove('list__item_fade');
-      console.log(e.target.closest('.list__item'));
+    }
+    if (e.target.closest('#get-random-location')) {
+      const randomNum = getRandomNumber(constants.locationsNumber);
+      character.location = locations[randomNum];
+    }
+  });
+
+  const locationsEl = document.getElementById('locations-popup');
+  locationsEl.addEventListener('click', function (e) {
+    if (e.target.closest('#submit-game')) {
+      console.log(character);
     }
   });
 }

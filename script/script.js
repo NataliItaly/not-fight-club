@@ -1,7 +1,7 @@
 import locationsPopup from './locationsPopup.js';
 import { tab } from './state.js';
 import popup from './popup.js';
-import chooseCharacter from './choseCharacter.js';
+import chooseCharacter from './chooseCharacter.js';
 
 popup(tab);
 
@@ -19,11 +19,11 @@ if (startBtn) {
 
 chooseCharacter();
 
-const createCharacterBtn = document.getElementById('create-character');
+/* const createCharacterBtn = document.getElementById('create-character');
 createCharacterBtn.addEventListener('click', function () {
   const createPopup = document.getElementById('create-popup');
   createPopup.classList.remove('create_open');
-});
+}); */
 
 locationsPopup();
 

@@ -11,6 +11,7 @@
   border-radius: 10px;
   cursor: pointer;
   overflow: hidden;
+  transition: 0.4s ease-in-out;
 }
 
 .list__item_fade {
@@ -33,6 +34,10 @@
   transform: perspective(400px) var(--_t, rotateY(var(--_a)));
   transition: 0.5s;
   cursor: pointer;
+}
+
+.list__item_active {
+  background: #a364d7;
 }
 
 .list__img {
