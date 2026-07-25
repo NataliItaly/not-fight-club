@@ -5,7 +5,7 @@ export default function popup(tab) {
     if (e.target.classList.contains('btn_next')) {
       const tabs = popup.querySelectorAll('.popup__tab');
       tabs.forEach((t) => t.classList.remove('popup__tab_active'));
-      if (tab.index < 2) {
+      if (tab.index < 3) {
         tab.index += 1;
         const currentTab = tabs[tab.index];
         currentTab.classList.add('popup__tab_active');
