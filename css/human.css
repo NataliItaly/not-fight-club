@@ -1,0 +1,34 @@
+.human {
+  width: 300px;
+  height: 500px;
+}
+
+.human__head {
+  width: 200px;
+  height: 80px;
+  background: url(../assets/body/head.png) no-repeat center / cover;
+}
+
+.human__neck {
+  width: 200px;
+  height: 45px;
+  background: url(../assets/body/neck.png) no-repeat center / cover;
+}
+
+.human__breast {
+  width: 200px;
+  height: 120px;
+  background: url(../assets/body/body.png) no-repeat center / cover;
+}
+
+.human__belly {
+  width: 200px;
+  height: 90px;
+  background: url(../assets/body/belly.png) no-repeat center / cover;
+}
+
+.human__head {
+  width: 200px;
+  height: 300px;
+  background: url(../assets/body/legs.png) no-repeat center / cover;
+}

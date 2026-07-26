@@ -35,8 +35,23 @@
   filter: drop-shadow(2px 0px 5px #19f6c7);
 }
 
+.fighter__float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
 .fighter__img_reflect {
-  transform: rotateY(180deg);
+  transform: scaleX(-1);
 }
 
 .fighter__name {
