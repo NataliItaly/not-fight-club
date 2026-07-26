@@ -1,9 +1,10 @@
 export default function createFighter(fighter) {
   console.log('fighter', fighter);
+  const reflectClass = fighter.location ? 'fighter__img_reflect' : ''
   return `
     <div class="fighter" id="${fighter.name}-${fighter.id}">
       <h3 class="fighter__name">${fighter.name}</h3>
-      <img class="fighter__img" src="./assets/aliens/${fighter.id}.png" alt="" class="fighter__img">
+      <img class="fighter__img ${reflectClass}" src="./assets/aliens/${fighter.id}.png" alt="" class="fighter__img">
       <div class="health" id="health-${fighter.name}-${fighter.id}">
         <div class="health__bar">
           <div class="health__bar-container" id="progess">

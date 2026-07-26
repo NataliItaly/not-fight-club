@@ -11,13 +11,14 @@ export default function characterView() {
     );
 
     const characterEl = `
-    <img class="character-view__img" src="./assets/aliens/${character.id}.png" alt="Your character" />
     <h3 class="character-view__name">${character.name}</h3>
-    <p class="character-view__location">You will fight</p>
-    <p class="character-view__planet">${locationDescription.description}</p>
-    <div class="character-view__img-wrapper">
+    <div class="character-view__bg">
+      <img class="character-view__img" src="./assets/aliens/${character.id}.png" alt="Your character" />
+      <div class="character-view__img-wrapper">
       <img src="./assets/locations/${character.location}.webp" class="character-view__planet-img" alt="${character.location}" />
+      </div>
     </div>
+    <p class="character-view__planet">${locationDescription.description}</p>
     `;
     characterViewer.insertAdjacentHTML('afterbegin', characterEl);
   }
