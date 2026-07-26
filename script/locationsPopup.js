@@ -1,6 +1,7 @@
 import { locations } from './data/location.js';
 import { character, constants } from './state.js';
 import getRandomNumber from './utils/getRandomNumber.js';
+import characterView from './characterView.js';
 
 export default function locationsPopup() {
   const list = document.getElementById('locations-list');
@@ -12,7 +13,6 @@ export default function locationsPopup() {
     `;
     list.insertAdjacentHTML('beforeend', li);
   });
-  //console.log(list);
 
   list.addEventListener('click', function (e) {
     if (e.target.closest('.list__item')) {
@@ -21,17 +21,25 @@ export default function locationsPopup() {
 
       listItems.forEach((item) => item.classList.add('list__item_fade'));
       e.target.closest('.list__item').classList.remove('list__item_fade');
+
+      document.getElementById('submit-game').disabled = false;
     }
-    if (e.target.closest('#get-random-location')) {
-      const randomNum = getRandomNumber(constants.locationsNumber);
-      character.location = locations[randomNum];
-    }
+  });
+
+  const randomBtn = document.getElementById('get-random-location');
+  randomBtn.addEventListener('click', function () {
+    const randomNum = getRandomNumber(constants.locationsNumber);
+    character.location = locations[randomNum].id;
+    console.log('randomNum', locations[randomNum]);
+    console.log('character location', character);
+    characterView();
   });
 
   const locationsEl = document.getElementById('locations-popup');
   locationsEl.addEventListener('click', function (e) {
     if (e.target.closest('#submit-game')) {
       console.log(character);
+      characterView();
     }
   });
 }

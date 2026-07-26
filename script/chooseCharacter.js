@@ -1,5 +1,6 @@
 import { character, constants } from './state.js';
 import getRandomNumber from './utils/getRandomNumber.js';
+import { tab } from './state.js';
 
 export default function chooseCharacter() {
   const list = document.getElementById('choose-character-list');
@@ -12,7 +13,6 @@ export default function chooseCharacter() {
       `;
     list.insertAdjacentHTML('beforeend', li);
   });
-  //console.log(list);
 
   list.addEventListener('click', function (e) {
     if (e.target.closest('.list__item')) {
@@ -20,10 +20,16 @@ export default function chooseCharacter() {
       listItems.forEach((item) => item.classList.remove('list__item_active'));
       e.target.closest('.list__item').classList.add('list__item_active');
       character.id = e.target.closest('.list__item').id;
+      if (character.id) {
+        document.getElementById('choose-character-btn').disabled = false;
+      }
+      console.log('character id', character);
     }
-    if (e.target.closest('#get-random-character')) {
-      const randomNum = getRandomNumber(constants.charactersNumber);
-      character.id = randomNum;
-    }
+  });
+
+  const randomBtn = document.getElementById('get-random-character');
+  randomBtn.addEventListener('click', function () {
+    const randomNum = getRandomNumber(constants.charactersNumber);
+    character.id = randomNum + 1;
   });
 }

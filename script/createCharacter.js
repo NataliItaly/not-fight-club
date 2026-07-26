@@ -1,15 +1,14 @@
-import { character } from './state';
+import { character } from './state.js';
 
-export function createCharacter() {
-  const form = document.querySelector('.create__form');
+export default function createCharacter() {
+  const characterInput = document.getElementById('character-input');
 
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    const name = form.querySelector('#character').value;
+  characterInput.addEventListener('input', function (e) {
+    const name = characterInput.value;
     if (name) {
       character.name = name;
-      console.log(character);
+      document.getElementById('choose-name-btn').disabled = false;
+      console.log(document.getElementById('choose-name-btn'));
     }
   });
 }

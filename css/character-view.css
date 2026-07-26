@@ -1,0 +1,45 @@
+.character-view {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  color: #fff;
+  margin: 0 auto;
+}
+
+.character-view__img {
+  height: 300px;
+}
+
+.character-view__location {
+  word-spacing: 20px;
+}
+
+.character-view__planet,
+.character-view__name {
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 2;
+  background: -webkit-linear-gradient(#19f6c7, #c90677);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Press Start 2P', system-ui;
+}
+
+.character-view__img-wrapper {
+  width: 200px;
+  height: 100px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.character-view__planet-img {
+  width: 100%;
+  object-fit: cover;
+  transition: 1s ease-in-out;
+}
+
+.character-view__planet-img:hover {
+  transform: scale(1.5);
+}
