@@ -8,7 +8,7 @@ import characterView from './characterView.js';
 
 popup(tab);
 
-const startBtn = document.getElementById('start-btn');
+const startBtn = document.getElementById('create-character');
 if (startBtn) {
   startBtn.addEventListener('click', function () {
     const popup = document.getElementById('popup');
@@ -26,13 +26,4 @@ if (startBtn) {
 
 chooseCharacter();
 createCharacter();
-
-/* const createCharacterBtn = document.getElementById('create-character');
-createCharacterBtn.addEventListener('click', function () {
-  const createPopup = document.getElementById('create-popup');
-  createPopup.classList.remove('create_open');
-}); */
-
 locationsPopup();
-
-// https://www.swapi.tech/api/

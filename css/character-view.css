@@ -43,3 +43,6 @@
 .character-view__planet-img:hover {
   transform: scale(1.5);
 }
+
+.character-view__btn {
+}

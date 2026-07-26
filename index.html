@@ -58,77 +58,14 @@
       </nav>
     </header>
     <main class="main">
-      <button class="main__btn" id="start-btn">Start Game</button>
-    </main>
-    <div class="popup" id="popup">
-      <button class="popup__close" id="close-popup">
-        <img src="./assets/close.svg" alt="Close popup" />
+      <button class="btn main__btn" id="create-character">
+        Create Character
       </button>
-      <div class="popup__tab choose-character">
-        <div>
-          <h2 class="popup__title choose-character__title">
-            Choose Your Character
-          </h2>
-          <button class="btn btn_next btn_secondary" id="get-random-character">
-            Or Get Random Character
-          </button>
-        </div>
-        <ul class="list choose-character__list" id="choose-character-list"></ul>
-        <button
-          class="btn btn_secondary btn_next"
-          id="choose-character-btn"
-          disabled
-        >
-          Next
-        </button>
-      </div>
-      <div class="popup__tab create" id="create-popup">
-        <div class="create__content">
-          <div class="create__form">
-            <label for="character" class="popup__title">
-              Give Name To Your character
-            </label>
-            <input
-              class="create__input"
-              type="text"
-              name="character-input"
-              id="character-input"
-              required
-            />
-            <button
-              class="btn btn_next btn_secondary"
-              id="choose-name-btn"
-              disabled
-              title="Write name of your character"
-            >
-              Next
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="popup__tab locations" id="locations-popup">
-        <div class="locations__content">
-          <h2 class="popup__title locations__title">
-            Where do you want to fight?
-          </h2>
-          <button class="btn_secondary btn_next" id="get-random-location">
-            Get Random Location
-          </button>
-          <ul class="list locations__list" id="locations-list"></ul>
-          <button class="btn btn_secondary btn_next" id="submit-game" disabled>
-            Next
-          </button>
-        </div>
-      </div>
-      <div class="popup__tab">
-        <h2 class="popup__title">Your character is</h2>
-        <div class="character-view" id="character-view"></div>
-      </div>
-      <div class="popup__tab fight-screen">
-        <h2 class="popup__title">
+      <div class="fight-screen" id="fight-screen">
+        <!-- <h2 class="popup__title">
           Please pick 1 Attack zone and 2 Defence zones
-        </h2>
-        <div class="fight">
+        </h2> -->
+        <!-- <div class="fight">
           <div class="hero">
             <h3 class="hero__name" id="hero"></h3>
             <div class="hero__image"></div>
@@ -161,6 +98,75 @@
             </div>
             <div class="hero__health-value">100%</div>
           </div>
+        </div> -->
+      </div>
+    </main>
+    <div class="popup" id="popup">
+      <button class="popup__close" id="close-popup">
+        <img src="./assets/close.svg" alt="Close popup" />
+      </button>
+      <div class="popup__tab choose-character">
+        <div>
+          <h2 class="popup__title choose-character__title">
+            Choose Your Character
+          </h2>
+          <button class="btn_next btn_secondary" id="get-random-character">
+            Or Get Random Character
+          </button>
+        </div>
+        <ul class="list choose-character__list" id="choose-character-list"></ul>
+        <button
+          class="btn_secondary btn_next"
+          id="choose-character-btn"
+          disabled
+        >
+          Next
+        </button>
+      </div>
+      <div class="popup__tab create" id="create-popup">
+        <div class="create__content">
+          <div class="create__form">
+            <label for="character" class="popup__title">
+              Give Name To Your character
+            </label>
+            <input
+              class="create__input"
+              type="text"
+              name="character-input"
+              id="character-input"
+              required
+            />
+            <button
+              class="btn_next btn_secondary"
+              id="choose-name-btn"
+              disabled
+              title="Write name of your character"
+            >
+              Next
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="popup__tab locations" id="locations-popup">
+        <div class="locations__content">
+          <h2 class="popup__title locations__title">
+            Where do you want to fight?
+          </h2>
+          <button class="btn_secondary btn_next" id="get-random-location">
+            Get Random Location
+          </button>
+          <ul class="list locations__list" id="locations-list"></ul>
+          <button class="btn_secondary btn_next" id="submit-game" disabled>
+            Next
+          </button>
+        </div>
+      </div>
+      <div class="popup__tab">
+        <h2 class="popup__title">Your character is</h2>
+        <div class="character-view" id="character-view">
+          <button class="btn character-view__btn" id="start-game-btn">
+            Start Game
+          </button>
         </div>
       </div>
     </div>
