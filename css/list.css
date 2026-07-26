@@ -15,7 +15,11 @@
 }
 
 .list__item_fade {
-  filter: blur(2px);
+  filter: brightness(0.4);
+}
+
+.list__item_fade:hover {
+  filter: brightness(1.2);
 }
 
 .list__item_vertical {
@@ -68,15 +72,6 @@
   0% {
     transform: rotateY(0deg);
   }
-  /* 25% {
-    transform: rotateY(-50deg);
-  }
-  50% {
-    transform: rotateY(0deg);
-  }
-  75% {
-    transform: rotateY(50deg);
-  } */
   100% {
     transform: rotateY(-50deg);
   }

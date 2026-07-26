@@ -8,7 +8,6 @@ export default function createCharacter() {
     if (name) {
       character.name = name;
       document.getElementById('choose-name-btn').disabled = false;
-      console.log(document.getElementById('choose-name-btn'));
     }
   });
 }

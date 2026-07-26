@@ -6,4 +6,5 @@ export default function createOpponent() {
 
   opponent.id = getRandomNumber(constants.charactersNumber, 1);
   opponent.name = names[getRandomNumber(names.length - 1)];
+  console.log(opponent);
 }

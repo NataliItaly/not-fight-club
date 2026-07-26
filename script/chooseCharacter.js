@@ -23,7 +23,6 @@ export default function chooseCharacter() {
       if (character.id) {
         document.getElementById('choose-character-btn').disabled = false;
       }
-      console.log('character id', character);
     }
   });
 

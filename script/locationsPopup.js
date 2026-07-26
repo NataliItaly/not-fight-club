@@ -38,7 +38,6 @@ export default function locationsPopup() {
   const locationsEl = document.getElementById('locations-popup');
   locationsEl.addEventListener('click', function (e) {
     if (e.target.closest('#submit-game')) {
-      console.log(character);
       characterView();
     }
   });

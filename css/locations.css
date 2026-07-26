@@ -35,16 +35,7 @@
   margin-bottom: 30px;
 }
 
-.locations__list {
-}
-
-.locations__img:hover {
-  transform: scale(1.5);
-}
-
-.locations__img {
-}
-
 .locations__item:hover .locations__img {
   transform: scale(1.2);
+  filter: brightness(1.2);
 }

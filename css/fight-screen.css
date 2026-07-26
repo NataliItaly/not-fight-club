@@ -19,6 +19,29 @@
   }
 }
 
+.fighter {
+  flex: 1 0 300px;
+  max-width: 300px;
+  min-width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
 .fighter__img {
   height: 300px;
+}
+
+.fighter__name {
+  background: -webkit-linear-gradient(#19f6c7, #c90677);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Press Start 2P', system-ui;
+  font-size: 20px;
+  text-align: center;
+}
+
+.fight__zone {
+  max-width: 300px;
 }
