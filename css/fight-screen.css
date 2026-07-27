@@ -70,7 +70,7 @@
 }
 
 .fight__zone {
-  max-width: 300px;
+  min-width: 300px;
 }
 
 .fight__settings {
@@ -81,9 +81,12 @@
 
 .fight__btn-wrapper {
   width: 100%;
+  display: flex;
+  gap: 40px;
 }
 
 .fight__btn {
+  font-size: 18px;
   margin: 0 auto;
 }
 
@@ -105,4 +108,15 @@
 .fight__output {
   font-family: 'Josefin Sans', sans-serif;
   text-align: center;
+  line-height: 1.5;
+  margin-bottom: 50px;
+}
+
+.fight__critical-btn {
+  font-size: 18px;
+  background: linear-gradient(45deg, #f17bf5, #c90677);
+}
+
+.fight__critical-btn::after {
+  background: linear-gradient(45deg, #f17bf5, #c90677);
 }

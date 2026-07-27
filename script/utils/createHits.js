@@ -1,36 +1,53 @@
-import getRandomNumber from './getRandomNumber.js';
-import { character, opponent, constants } from '../state.js';
+import { character, opponent } from '../state.js';
+import updateSpheres from './updateSpheres.js';
+import updatePoints from './updatePoints.js';
 
 export default function createHits() {
   const fightOutput = document.getElementById('fight-output');
 
   const characterAttack = character.attackZones[0];
-  //constants.body[getRandomNumber(constants.body.length - 1)];
-  console.log('character attack', characterAttack);
+
+  let characterResult = '';
+  let opponentResult = '';
+
   if (!opponent.defenceZones.includes(characterAttack)) {
-    opponent.points -= 10;
+    opponent.points = updatePoints(opponent.points, 10);
 
     const opponentHealth = document.getElementById(
       `health-value-${opponent.name}-${opponent.id}`,
     );
     opponentHealth.textContent = `${opponent.points}%`;
-
-    const currentOutput = `<p class="fight__output-text">${character.name} attacked ${opponent.name} to ${characterAttack} and deal 10 damage</p>`;
-    fightOutput.innerHTML += currentOutput;
+    characterResult = ' with damage of 10%';
+  } else {
+    characterResult = ', attack was blocked';
   }
 
   const opponentAttack = opponent.attackZones[0];
-  //constants.body[getRandomNumber(constants.body.length - 1)];
-  console.log('opponent attack', opponentAttack);
   if (!character.defenceZones.includes(opponentAttack)) {
-    character.points -= 10;
+    character.points = updatePoints(character.points, 10);
 
     const characterHealth = document.getElementById(
       `health-value-${character.name}-${character.id}`,
     );
     characterHealth.textContent = `${character.points}%`;
-
-    const currentOutput = `<p class="fight__output-text">${opponent.name} attacked ${character.name} to ${opponentAttack} and deal 10 damage</p>`;
-    fightOutput.innerHTML += currentOutput;
+    opponentResult = ' with damage of 10%';
+  } else {
+    opponentResult = ', attack was blocked';
   }
+
+  const characterOutput = `<p class="fight__output-text">${character.name} attacked ${opponent.name} to ${characterAttack}${characterResult} ${character.points}-${opponent.points}</p>`;
+  const opponentOutput = `<p class="fight__output-text">${opponent.name} attacked ${character.name} to ${opponentAttack}${opponentResult} ${character.points}-${opponent.points}</p>`;
+
+  fightOutput.innerHTML += characterOutput;
+  fightOutput.innerHTML += opponentOutput;
+
+  console.log(
+    'normal hit',
+    'character points',
+    character.points,
+    'opponent points',
+    opponent.points,
+  );
+  updateSpheres(opponent);
+  updateSpheres(character);
 }
