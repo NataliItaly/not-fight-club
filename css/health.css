@@ -10,8 +10,8 @@
 
 .health__bar-container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 10px;
   background: #000;
   padding: 5px 5px 10px 5px;
   width: 100%;
@@ -24,8 +24,8 @@
 }
 
 .health__sphere {
-  height: 12px;
-  width: 12px;
+  height: 20px;
+  width: 20px;
   border-radius: 50%;
   z-index: 20 !important;
   position: relative;
@@ -62,6 +62,102 @@
   background: radial-gradient(ellipse at center, #79f3d9, #01ad88 50% #79f3d9);
 }
 
+.health__sphere_carefull {
+  background: -webkit-radial-gradient(
+    10% 10%,
+    ellipse cover,
+    #96f747 0%,
+    #008026 50%,
+    #96f747 100%
+  ); /* Chrome10+, Safari5.1+ */
+  background: -moz-radial-gradient(
+    10% 10%,
+    ellipse cover,
+    #96f747 0%,
+    #008026 50%,
+    #96f747 100%
+  ); /* FF3.6+ */
+  background: -o-radial-gradient(
+    10% 10%,
+    ellipse cover,
+    #96f747 0%,
+    #008026 50%,
+    #96f747 100%
+  ); /* Opera 12+ */
+  background: -ms-radial-gradient(
+    10% 10%,
+    ellipse cover,
+    #96f747 0%,
+    #008026 50%,
+    #96f747 100%
+  ); /* IE10+ */
+  background: radial-gradient(ellipse at center, #96f747, #008026 50% #96f747);
+}
+
+.health__sphere_warning {
+  background: -webkit-radial-gradient(
+    10% 10%,
+    ellipse cover,
+    #d7f747 0%,
+    #fa6603 50%,
+    #d7f747 100%
+  ); /* Chrome10+, Safari5.1+ */
+  background: -moz-radial-gradient(
+    10% 10%,
+    ellipse cover,
+    #d7f747 0%,
+    #fa6603 50%,
+    #d7f747 100%
+  ); /* FF3.6+ */
+  background: -o-radial-gradient(
+    10% 10%,
+    ellipse cover,
+    #d7f747 0%,
+    #fa6603 50%,
+    #d7f747 100%
+  ); /* Opera 12+ */
+  background: -ms-radial-gradient(
+    10% 10%,
+    ellipse cover,
+    #d7f747 0%,
+    #fa6603 50%,
+    #d7f747 100%
+  ); /* IE10+ */
+  background: radial-gradient(ellipse at center, #d7f747, #fa6603 50% #d7f747);
+}
+
+.health__sphere_alert {
+  background: -webkit-radial-gradient(
+    10% 10%,
+    ellipse cover,
+    #f83a6a 0%,
+    #dd011f 50%,
+    #f83a6a 100%
+  ); /* Chrome10+, Safari5.1+ */
+  background: -moz-radial-gradient(
+    10% 10%,
+    ellipse cover,
+    #f83a6a 0%,
+    #dd011f 50%,
+    #f83a6a 100%
+  ); /* FF3.6+ */
+  background: -o-radial-gradient(
+    10% 10%,
+    ellipse cover,
+    #f83a6a 0%,
+    #dd011f 50%,
+    #f83a6a 100%
+  ); /* Opera 12+ */
+  background: -ms-radial-gradient(
+    10% 10%,
+    ellipse cover,
+    #f83a6a 0%,
+    #dd011f 50%,
+    #f83a6a 100%
+  ); /* IE10+ */
+  background: radial-gradient(ellipse at center, #f83a6a, #dd011f 50% #f83a6a);
+}
+
 .health__sphere:before {
   content: '';
   position: absolute;
@@ -84,8 +180,8 @@
   bottom: 0;
   left: 0;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 10px;
   padding: 0 5px;
   width: 100%;
   height: 20px;
@@ -93,8 +189,8 @@
 }
 
 .health__shadow {
-  width: 12px;
-  height: 12px;
+  width: 20px;
+  height: 20px;
   box-shadow: 0px 0px 25px 10px rgba(255, 255, 255, 1);
   border-radius: 50%;
   -webkit-transform: scale(0.3);
@@ -106,83 +202,83 @@
   font-size: 24px;
 }
 
-#shadow1 {
+.health__shadow1 {
   -webkit-animation: fade-1 2s 0s infinite;
 }
 
-#shadow2 {
+.health__shadow2 {
   -webkit-animation: fade-2 2s 0.2s infinite;
 }
 
-#shadow3 {
+.health__shadow3 {
   -webkit-animation: fade-3 2s 0.4s infinite;
 }
 
-#shadow4 {
+.health__shadow4 {
   -webkit-animation: fade-4 2s 0.6s infinite;
 }
 
-#shadow5 {
+.health__shadow5 {
   -webkit-animation: fade-5 2s 0.8s infinite;
 }
 
-#shadow6 {
+.health__shadow6 {
   -webkit-animation: fade-6 2s 1s infinite;
 }
 
-#shadow7 {
+.health__shadow7 {
   -webkit-animation: fade-7 2s 1.2s infinite;
 }
 
-#shadow8 {
+.health__shadow8 {
   -webkit-animation: fade-8 2s 1.4s infinite;
 }
 
-#shadow9 {
+.health__shadow9 {
   -webkit-animation: fade-9 2s 1.6s infinite;
 }
 
-#shadow10 {
+.health__shadow10 {
   -webkit-animation: fade-10 2s 1.8s infinite;
 }
 
-#sphere1 {
+.health__sphere1 {
   -webkit-animation: scale-1 2s 0s infinite;
 }
 
-#sphere2 {
+.health__sphere2 {
   -webkit-animation: scale-2 2s 0.2s infinite;
 }
 
-#sphere3 {
+.health__sphere3 {
   -webkit-animation: scale-3 2s 0.4s infinite;
 }
 
-#sphere4 {
+.health__sphere4 {
   -webkit-animation: scale-4 2s 0.6s infinite;
 }
 
-#sphere5 {
+.health__sphere5 {
   -webkit-animation: scale-5 2s 0.8s infinite;
 }
 
-#sphere6 {
+.health__sphere6 {
   -webkit-animation: scale-6 2s 1s infinite;
 }
 
-#sphere7 {
+.health__sphere7 {
   -webkit-animation: scale-7 2s 1.2s infinite;
 }
 
-#sphere8 {
+.health__sphere8 {
   -webkit-animation: scale-8 2s 1.4s infinite;
 }
 
-#sphere9 {
+.health__sphere9 {
   -webkit-animation: scale-9 2s 1.6s infinite;
 }
 
-#sphere10 {
+.health__sphere10 {
   -webkit-animation: scale-10 2s 1.8s infinite;
 }
 

@@ -30,8 +30,6 @@ export default function locationsPopup() {
   randomBtn.addEventListener('click', function () {
     const randomNum = getRandomNumber(constants.locationsNumber);
     character.location = locations[randomNum].id;
-    console.log('randomNum', locations[randomNum]);
-    console.log('character location', character);
     characterView();
   });
 

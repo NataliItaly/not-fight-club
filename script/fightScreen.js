@@ -4,11 +4,16 @@ import createOpponent from './utils/createOpponent.js';
 import createRadioInputs from './utils/createRadioInputs.js';
 import updateInputs from './utils/updateInputs.js';
 import createHits from './utils/createHits.js';
+import createCriticalHits from './utils/createCriticalHits.js';
+import createSpheres from './utils/createSpheres.js';
 
 export default function fightScreen() {
   const hero = createFighter(character);
+  createSpheres(character);
+
   createOpponent();
   const enemy = createFighter(opponent);
+  createSpheres(opponent);
 
   document.body.classList.add('body_fight');
   document.getElementById('video-bg').classList.add('video_hidden');
@@ -35,6 +40,13 @@ export default function fightScreen() {
   fightBtn.addEventListener('click', function () {
     if (character.points > 0 && opponent.points > 0) {
       createHits();
+    }
+  });
+
+  const criticalBtn = document.getElementById('critical-btn');
+  criticalBtn.addEventListener('click', function () {
+    if (character.points > 0 && opponent.points > 0) {
+      createCriticalHits();
     }
   });
 }
