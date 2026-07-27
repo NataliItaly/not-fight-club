@@ -11,7 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/style.css" />
-    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="favicon1.png" type="image/x-icon" />
   </head>
   <body>
     <video class="video" id="video-bg" autoplay muted loop playsinline>
@@ -64,6 +64,24 @@
       <div class="fight-screen" id="fight-screen">
         <div class="fight__zone">
           <h2 class="fight__title">Pick 1 Attack zone and 2 Defence zones</h2>
+          <div class="fight__settings">
+            <div class="fight__defence" id="defence">
+              <h3 class="fight__type-title">Defence</h3>
+            </div>
+            <div class="human">
+              <div class="human__body human__head"></div>
+              <div class="human__body human__neck"></div>
+              <div class="human__body human__breast"></div>
+              <div class="human__body human__belly"></div>
+              <div class="human__body human__legs"></div>
+            </div>
+            <div class="fight__attack" id="attack">
+              <h3 class="fight__type-title">Attack</h3>
+            </div>
+            <div class="fight__btn-wrapper">
+              <button class="btn fight__btn" id="fight" disabled>Fight</button>
+            </div>
+          </div>
         </div>
       </div>
     </main>
