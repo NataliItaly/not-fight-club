@@ -79,6 +79,11 @@ body {
   animation: button-slide 0.6s ease-in forwards;
 }
 
+.btn:disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
 @keyframes button-slide {
   0% {
     transform: translateX(0);

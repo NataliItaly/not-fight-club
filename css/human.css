@@ -1,34 +1,75 @@
 .human {
-  width: 300px;
-  height: 500px;
+  width: 160px;
+  height: 400px;
+}
+
+.human__body {
+  width: 100%;
+  cursor: pointer;
+  transition: 0.6s ease-in;
 }
 
 .human__head {
-  width: 200px;
-  height: 80px;
-  background: url(../assets/body/head.png) no-repeat center / cover;
+  height: 50px;
+  background: url(../assets/body/head.png) no-repeat center bottom / contain;
+  filter: drop-shadow(4px 0px 4px #19f6c7);
+}
+
+.human__head:hover {
+  background:
+    url(../assets/body/head.png) no-repeat center top / contain,
+    rgba(0, 0, 0, 0.2);
 }
 
 .human__neck {
-  width: 200px;
-  height: 45px;
-  background: url(../assets/body/neck.png) no-repeat center / cover;
+  height: 20px;
+  background: url(../assets/body/neck.png) no-repeat center top / contain;
+  filter: drop-shadow(4px 0px 4px #19f6c7);
+}
+
+.human__neck:hover {
+  background:
+    url(../assets/body/neck.png) no-repeat center top / contain,
+    rgba(0, 0, 0, 0.2);
 }
 
 .human__breast {
-  width: 200px;
-  height: 120px;
-  background: url(../assets/body/body.png) no-repeat center / cover;
+  height: 80px;
+  background: url(../assets/body/breast.png) no-repeat center top / contain;
+  filter: drop-shadow(4px 0px 4px #19f6c7);
+}
+
+.human__breast:hover {
+  background:
+    url(../assets/body/breast.png) no-repeat center top / contain,
+    rgba(0, 0, 0, 0.2);
 }
 
 .human__belly {
-  width: 200px;
-  height: 90px;
-  background: url(../assets/body/belly.png) no-repeat center / cover;
+  height: 40px;
+  background: url(../assets/body/belly.png) no-repeat center top / contain;
+  filter: drop-shadow(4px 0px 4px #19f6c7);
 }
 
-.human__head {
-  width: 200px;
-  height: 300px;
-  background: url(../assets/body/legs.png) no-repeat center / cover;
+.human__belly:hover {
+  background:
+    url(../assets/body/belly.png) no-repeat center top / contain,
+    rgba(0, 0, 0, 0.2);
+}
+
+.human__legs {
+  height: 184px;
+  background: url(../assets/body/legs.png) no-repeat center top / contain;
+  margin-top: -3px;
+  filter: drop-shadow(4px 0px 4px #19f6c7);
+}
+
+.human__legs:hover {
+  background:
+    url(../assets/body/legs.png) no-repeat center top / contain,
+    rgba(0, 0, 0, 0.2);
+}
+
+.human__body:hover {
+  filter: drop-shadow(4px 0px 4px #19f6c7);
 }

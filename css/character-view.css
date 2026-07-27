@@ -83,3 +83,13 @@
 .character-view__planet-img:hover {
   transform: scale(1.5);
 }
+
+.character-view__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  object-fit: cover;
+}

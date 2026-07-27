@@ -1,12 +1,18 @@
+export const gameState = {};
+
 export const character = {
   id: '',
   name: '',
   location: '',
+  defenceZones: [],
+  attackZones: [],
 };
 
 export const opponent = {
   id: '',
   name: '',
+  defenceZones: [],
+  attackZones: [],
 };
 
 export const tab = {
