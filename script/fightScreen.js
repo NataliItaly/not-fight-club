@@ -3,7 +3,7 @@ import createFighter from './utils/createFighter.js';
 import createOpponent from './utils/createOpponent.js';
 import createRadioInputs from './utils/createRadioInputs.js';
 import updateInputs from './utils/updateInputs.js';
-import { gameState } from './state.js';
+import createHits from './utils/createHits.js';
 
 export default function fightScreen() {
   const hero = createFighter(character);
@@ -29,5 +29,12 @@ export default function fightScreen() {
   const radioInputs = document.querySelectorAll('.fight__radio');
   radioInputs.forEach((rd) => {
     rd.addEventListener('change', updateInputs);
+  });
+
+  const fightBtn = document.getElementById('fight');
+  fightBtn.addEventListener('click', function () {
+    if (character.points > 0 && opponent.points > 0) {
+      createHits();
+    }
   });
 }

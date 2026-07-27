@@ -34,7 +34,7 @@ export default function createFighter(fighter) {
             </div>
           </div>
         </div>
-        <div class="health__value">100%</div>
+        <div class="health__value" id="health-value-${fighter.name}-${fighter.id}">100%</div>
       </div>
     </div>
   `;

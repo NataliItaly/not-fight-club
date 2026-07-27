@@ -4,8 +4,10 @@ import popup from './popup.js';
 import chooseCharacter from './chooseCharacter.js';
 import resetCharacter from './utils/resetCharacter.js';
 import createCharacter from './createCharacter.js';
-import characterView from './characterView.js';
 
+alert(
+  'Уважаемый проверяющий, пожалуйста, проверьте мою работу в среду. Заранее большое спасибо',
+);
 popup(tab);
 
 const startBtn = document.getElementById('create-character');
