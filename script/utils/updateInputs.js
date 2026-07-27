@@ -14,7 +14,7 @@ export default function updateInputs() {
 
   const fightBtn = document.getElementById('fight');
   if (selected && checked.length === 2) {
-    character.attackZones = selected.value;
+    character.attackZones = [selected.value];
     character.defenceZones = [...checked.map((el) => el.value)];
 
     opponent.attackZones = [
