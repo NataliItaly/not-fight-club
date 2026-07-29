@@ -16,6 +16,7 @@
   transform-origin: center;
   transition: width 0.5s;
   overflow-y: scroll;
+  z-index: 10;
 }
 
 .popup_open {

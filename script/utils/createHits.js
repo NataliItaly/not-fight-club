@@ -1,6 +1,7 @@
 import { character, opponent } from '../state.js';
 import updateSpheres from './updateSpheres.js';
 import updatePoints from './updatePoints.js';
+import winnerPopup from '../winnerPopup.js';
 
 export default function createHits() {
   const fightOutput = document.getElementById('fight-output');
@@ -17,9 +18,11 @@ export default function createHits() {
       `health-value-${opponent.name}-${opponent.id}`,
     );
     opponentHealth.textContent = `${opponent.points}%`;
-    characterResult = ' with damage of 10%';
+    characterResult =
+      ' <strong class="fight__output-result">with damage of 10%</strong>';
   } else {
-    characterResult = ', attack was blocked';
+    characterResult =
+      ', <strong class="fight__output-result">attack was blocked</strong>';
   }
 
   const opponentAttack = opponent.attackZones[0];
@@ -30,24 +33,23 @@ export default function createHits() {
       `health-value-${character.name}-${character.id}`,
     );
     characterHealth.textContent = `${character.points}%`;
-    opponentResult = ' with damage of 10%';
+    opponentResult =
+      ' <strong class="fight__output-result">with damage of 10%</strong>';
   } else {
-    opponentResult = ', attack was blocked';
+    opponentResult =
+      ', <strong class="fight__output-result">attack was blocked</strong>';
   }
 
-  const characterOutput = `<p class="fight__output-text">${character.name} attacked ${opponent.name} to ${characterAttack}${characterResult} ${character.points}-${opponent.points}</p>`;
-  const opponentOutput = `<p class="fight__output-text">${opponent.name} attacked ${character.name} to ${opponentAttack}${opponentResult} ${character.points}-${opponent.points}</p>`;
+  const characterOutput = `<p class="fight__output-text"><strong class="fight__output-character">${character.name}</strong> attacked <strong class="fight__output-opponent">${opponent.name}</strong> to <strong class="fight__output-body">${characterAttack}</strong>${characterResult}</p>`;
+  const opponentOutput = `<p class="fight__output-text"><strong class="fight__output-opponent">${opponent.name}</strong> attacked <strong class="fight__output-character">${character.name}</strong> to <strong class="fight__output-body">${opponentAttack}</strong>${opponentResult}</p>`;
 
   fightOutput.innerHTML += characterOutput;
   fightOutput.innerHTML += opponentOutput;
 
-  console.log(
-    'normal hit',
-    'character points',
-    character.points,
-    'opponent points',
-    opponent.points,
-  );
   updateSpheres(opponent);
   updateSpheres(character);
+
+  if (character.points <= 0 || opponent.points <= 0) {
+    winnerPopup(character.points);
+  }
 }

@@ -4,6 +4,7 @@
   left: 0;
   width: 100%;
   padding: 20px;
+  z-index: 1;
 }
 
 .header__nav {
@@ -114,9 +115,11 @@ em.planet.right {
   display: flex;
   justify-content: center;
   align-items: center;
+  background: transparent;
   padding: 10px;
   cursor: pointer;
   transition: 0.5s;
+  cursor: pointer;
 }
 
 .header__link:hover {

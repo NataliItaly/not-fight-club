@@ -84,6 +84,14 @@ body {
   pointer-events: none;
 }
 
+.btn_variant {
+  background: linear-gradient(45deg, yellow, orangered);
+}
+
+.btn_variant::after {
+  background: linear-gradient(45deg, yellow, orangered);
+}
+
 @keyframes button-slide {
   0% {
     transform: translateX(0);

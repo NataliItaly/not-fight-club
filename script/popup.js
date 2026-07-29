@@ -24,7 +24,11 @@ export default function popup(tab) {
       tabs.forEach((t) => t.classList.remove('popup__tab_active'));
       popup.classList.remove('popup_open');
       tab.index = 0;
-      resetCharacter();
+      //resetCharacter();
+
+      document
+        .getElementById('create-character')
+        .classList.add('main__btn_hidden');
     }
   });
 }

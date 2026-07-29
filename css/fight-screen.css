@@ -1,9 +1,12 @@
-.fight-screen {
+.fight {
   display: none;
-  opacity: 0;
 }
 
-.fight-screen_active {
+.fight_active {
+  display: block;
+}
+
+.fight__zones {
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -110,6 +113,26 @@
   text-align: center;
   line-height: 1.5;
   margin-bottom: 50px;
+}
+
+.fight__output-character {
+  color: #19f6c7;
+}
+
+.fight__output-opponent {
+  color: #f846ae;
+}
+
+.fight__output-body {
+  color: #33f75d;
+}
+
+.fight__output-result {
+  color: #fac73a;
+}
+
+.fight__output-critical {
+  color: red;
 }
 
 .fight__critical-btn {

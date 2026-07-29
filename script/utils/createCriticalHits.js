@@ -1,6 +1,7 @@
 import { character, opponent } from '../state.js';
 import updateSpheres from './updateSpheres.js';
 import updatePoints from './updatePoints.js';
+import winnerPopup from '../winnerPopup.js';
 
 export default function createCriticalHits() {
   const fightOutput = document.getElementById('fight-output');
@@ -14,10 +15,12 @@ export default function createCriticalHits() {
   );
   if (opponent.defenceZones.includes(characterAttack)) {
     opponent.points = updatePoints(opponent.points, 10);
-    characterResult = ' with damage of 10%';
+    characterResult =
+      ' <strong class="fight__output-result">with damage of 10%</strong>';
   } else {
     opponent.points = updatePoints(opponent.points, 20);
-    characterResult = ' with damage of 20%';
+    characterResult =
+      ' <strong class="fight__output-result">with damage of 20%</strong>';
   }
   opponentHealth.textContent = `${opponent.points}%`;
 
@@ -28,25 +31,25 @@ export default function createCriticalHits() {
   );
   if (character.defenceZones.includes(opponentAttack)) {
     character.points = updatePoints(character.points, 10);
-    opponentResult = ' with damage of 10%';
+    opponentResult =
+      ' <strong class="fight__output-result">with damage of 10%</strong>';
   } else {
     character.points = updatePoints(character.points, 20);
-    opponentResult = ' with damage of 20%';
+    opponentResult =
+      ' <strong class="fight__output-result">with damage of 20%</strong>';
   }
   characterHealth.textContent = `${character.points}%`;
 
-  const characterOutput = `<p class="fight__output-text">${character.name} made <strong>CRITICAL HIT</strong> ${opponent.name} to ${characterAttack}${characterResult} ${character.points}-${opponent.points}</p>`;
-  const opponentOutput = `<p class="fight__output-text">${opponent.name} made <strong>CRITICAL HIT</strong> ${character.name} to ${opponentAttack}${opponentResult} ${character.points}-${opponent.points}</p>`;
+  const characterOutput = `<p class="fight__output-text"><strong class="fight__output-character">${character.name}</strong> made <strong class="fight__output-critical">CRITICAL HIT</strong> <strong class="fight__output-opponent">${opponent.name}</strong> to <strong class="fight__output-body">${characterAttack}</strong>${characterResult}</p>`;
+  const opponentOutput = `<p class="fight__output-text"><strong class="fight__output-opponent">${opponent.name}</strong> made <strong class="fight__output-critical">CRITICAL HIT</strong> <strong class="fight__output-character">${character.name}</strong> to <strong class="fight__output-body">${opponentAttack}</strong>${opponentResult}</p>`;
 
   fightOutput.innerHTML += characterOutput;
   fightOutput.innerHTML += opponentOutput;
-  console.log(
-    'CRITICAL',
-    'character points',
-    character.points,
-    'opponent points',
-    opponent.points,
-  );
+
   updateSpheres(character);
   updateSpheres(opponent);
+
+  if (character.points <= 0 || opponent.points <= 0) {
+    winnerPopup(character.points);
+  }
 }

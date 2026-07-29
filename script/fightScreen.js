@@ -19,9 +19,11 @@ export default function fightScreen() {
   document.getElementById('video-bg').classList.add('video_hidden');
 
   const fightScreenEl = document.getElementById('fight-screen');
-  fightScreenEl.classList.add('fight-screen_active');
-  fightScreenEl.insertAdjacentHTML('afterbegin', hero);
-  fightScreenEl.insertAdjacentHTML('beforeend', enemy);
+  fightScreenEl.classList.add('fight_active');
+
+  const fightZonesEl = document.getElementById('fight-zones');
+  fightZonesEl.insertAdjacentHTML('afterbegin', hero);
+  fightZonesEl.insertAdjacentHTML('beforeend', enemy);
 
   createRadioInputs('defence');
   createRadioInputs('attack');
