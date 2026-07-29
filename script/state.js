@@ -10,6 +10,7 @@ export const character = {
   wins: 0,
   lost: 0,
   draw: 0,
+  isGameStarted: false,
 };
 
 export const opponent = {

@@ -24,7 +24,9 @@ body {
 }
 
 .body_fight {
-  background: url(../assets/fight-bg.jpg) no-repeat center / cover;
+  background:
+    url(../assets/fight-bg.jpg) no-repeat center / cover,
+    #000;
 }
 
 .video {
