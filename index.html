@@ -17,7 +17,7 @@
     <video class="video" id="video-bg" autoplay muted loop playsinline>
       <source src="./assets/space-video.mp4" type="video/mp4" />
     </video>
-    <header class="header">
+    <header class="header" id="header">
       <nav class="header__nav">
         <a class="header__logo" href="#">
           <span class="header__logo-animation">
@@ -32,37 +32,38 @@
         </a>
         <ul class="header__menu">
           <li class="header__menu-item">
-            <a class="header__link" href="#">
+            <button class="header__link" id="home-link">
               <img class="header__img" src="./assets/home.svg" alt="Home" />
-            </a>
+            </button>
           </li>
           <li class="header__menu-item">
-            <a class="header__link" href="#">
+            <button class="header__link" id="settings-link">
               <img
                 class="header__img"
                 src="./assets/settings.svg"
                 alt="Settings"
               />
-            </a>
+            </button>
           </li>
           <li class="header__menu-item">
-            <a class="header__link" href="#">
+            <button class="header__link" id="profile-link">
               <img
                 class="header__img"
                 src="./assets/profile.svg"
                 alt="Profile"
               />
-            </a>
+            </button>
           </li>
         </ul>
       </nav>
     </header>
-    <main class="main">
+    <main class="main" id="main">
       <button class="btn main__btn" id="create-character">
         Create Character
       </button>
-      <div class="fight">
-        <div class="fight-screen" id="fight-screen">
+
+      <div class="fight" id="fight-screen">
+        <div class="fight__zones" id="fight-zones">
           <div class="fight__zone">
             <h2 class="fight__title">Pick 1 Attack zone and 2 Defence zones</h2>
             <div class="fight__settings">
@@ -96,6 +97,8 @@
         </div>
         <div class="fight__output" id="fight-output"></div>
       </div>
+
+      <div class="profile" id="profile"></div>
     </main>
     <div class="popup" id="popup">
       <button class="popup__close" id="close-popup">
@@ -158,12 +161,19 @@
         </div>
       </div>
       <div class="popup__tab">
-        <h2 class="character-view__title">Your character is</h2>
-        <div class="character-view" id="character-view">
-          <button class="btn character-view__btn" id="start-game-btn">
-            Start Game
-          </button>
-        </div>
+        <div class="character-view" id="character-view"></div>
+        <button class="btn character-view__btn" id="start-game-btn">
+          Start Game
+        </button>
+      </div>
+    </div>
+    <div class="winner" id="winner-popup">
+      <div class="winner__content" id="winner-content">
+        <h2 class="winner__title" id="winner-title"></h2>
+        <button class="winner__close" id="winner-close-btn">
+          <img src="./assets/close.svg" alt="Close popup" id="winner-close" />
+        </button>
+        <button class="btn" id="back-to-main">Back to Main</button>
       </div>
     </div>
     <script type="module" src="./script/script.js"></script>

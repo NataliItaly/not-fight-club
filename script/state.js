@@ -6,7 +6,10 @@ export const character = {
   location: '',
   defenceZones: [],
   attackZones: [],
-  points: 100
+  points: 100,
+  wins: 0,
+  lost: 0,
+  draw: 0,
 };
 
 export const opponent = {
@@ -14,7 +17,7 @@ export const opponent = {
   name: '',
   defenceZones: [],
   attackZones: [],
-  points: 100
+  points: 100,
 };
 
 export const tab = {

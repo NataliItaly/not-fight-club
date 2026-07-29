@@ -1,6 +1,5 @@
 export default function createSpheres(fighter) {
   const spheresNum = fighter.points / 10;
-  console.log('fighter', fighter.name, 'fighter points', spheresNum);
   let spheresHtml = '';
   let healthEffect = '<div class="health__effect">';
 
@@ -8,7 +7,6 @@ export default function createSpheres(fighter) {
   if (spheresNum <= 7) sphereClass = 'health__sphere_carefull';
   if (spheresNum <= 5) sphereClass = 'health__sphere_warning';
   if (spheresNum <= 2) sphereClass = 'health__sphere_alert';
-  console.log(sphereClass);
 
   for (let i = 0; i < spheresNum; i++) {
     spheresHtml += `<div class="health__sphere ${sphereClass} health__sphere${i + 1}" id="sphere${i + 1}-${fighter.name}-${fighter.id}"></div>`;

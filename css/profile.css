@@ -1,0 +1,56 @@
+.profile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  font-family: 'Josefin Sans', sans-serif;
+  padding: 40px;
+  z-index: 0;
+}
+
+.profile_open {
+  display: flex;
+}
+
+.profile__title {
+  color: #fff;
+  background: -webkit-linear-gradient(#05daf7, #c90677);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Press Start 2P', system-ui;
+  font-size: 20px;
+}
+
+.profile__img-wrapper {
+  width: 100%;
+  height: 500px;
+  position: relative;
+}
+
+.profile__location {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.profile__avatar {
+  max-width: 300px;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+.profile__btn-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}

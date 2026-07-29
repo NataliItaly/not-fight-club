@@ -1,9 +1,9 @@
 import { locations } from './data/location.js';
 import { character } from './state.js';
-import fightScreen from './fightScreen.js';
 
 export default function characterView() {
   const characterViewer = document.getElementById('character-view');
+  characterView.innerHTML = '';
 
   if (character.id && character.name && character.location) {
     const locationDescription = locations.find(
@@ -25,15 +25,4 @@ export default function characterView() {
     `;
     characterViewer.insertAdjacentHTML('afterbegin', characterEl);
   }
-
-  const startGameBtn = document.getElementById('start-game-btn');
-  startGameBtn.addEventListener('click', function () {
-    const popup = document.getElementById('popup');
-    popup.classList.remove('popup_open');
-
-    const startBtn = document.getElementById('create-character');
-    startBtn.classList.add('main__btn_hidden');
-
-    fightScreen();
-  });
 }
