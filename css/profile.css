@@ -24,6 +24,31 @@
   -webkit-text-fill-color: transparent;
   font-family: 'Press Start 2P', system-ui;
   font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.profile__result {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  text-transform: uppercase;
+}
+
+.profile__wins {
+  font-size: 20px;
+  color: #f1239b;
+}
+
+.profile__lost {
+  font-size: 20px;
+  color: purple;
+}
+
+.profile__draw {
+  font-size: 20px;
+  color: orange;
 }
 
 .profile__img-wrapper {
@@ -53,4 +78,22 @@
   display: flex;
   justify-content: center;
   gap: 30px;
+}
+
+.profile__btn {
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.profile__text {
+  font-size: 20px;
+  text-align: center;
+}
+
+.profile__game-btn {
+  background: linear-gradient(45deg, #06c930, #19f6c7);
+}
+
+.profile__game-btn::after {
+  background: linear-gradient(45deg, #06c930, #19f6c7);
 }

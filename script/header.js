@@ -14,10 +14,26 @@ export function header() {
       const profileEl = document.getElementById('profile');
       profileEl.classList.add('profile_open');
       profileEl.innerHTML = '';
+      console.log('profile html', document.getElementById('profile').innerHTML);
 
       if (character.id) {
+        console.log(
+          'profile html',
+          document.getElementById('profile').innerHTML,
+        );
+
+        const returnToGameBtn = character.isGameStarted
+          ? `<button class="btn profile__game-btn" id="return-to-game">
+              Return to Game
+            </button>`
+          : '';
         profileEl.innerHTML = `
             <h2 class="profile__title" id="profile-title">${character.name}</h2>
+            <div class="profile__result">
+              <p>Wins: <span class="profile__wins">${character.wins}</span></p>
+              <p>Lost: <span class="profile__lost">${character.lost}</span></p>
+              <p>Draw: <span class="profile__draw">${character.draw}</span></p>
+            </div>
             <div class="profile__img-wrapper" id="profile-img-wrapper">
               <img class="profile__location" src="./assets/locations/${character.location}.webp" alt="${character.location}" />
               <img class="profile__avatar" src="./assets/aliens/${character.id}.png" alt="${character.name}'s profile" />
@@ -25,12 +41,13 @@ export function header() {
             <div class="profile__btn-wrapper">
               <button class="btn" id="edit-profile">Edit</button>
               <button class="btn btn_variant" id="return-to-main">Home</button>
+              ${returnToGameBtn}
             </div>
           `;
       } else {
         profileEl.innerHTML = `
             <h2 class="profile__title">You didn't create a character yet</h2>
-            <p>Return to Home page to create character</p>
+            <p class="profile__text">Return to Home page to create character</p>
             <button class="btn profile__btn" id="profile-btn">Home</button>
           `;
       }

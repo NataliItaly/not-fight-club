@@ -51,5 +51,14 @@ export default function createCriticalHits() {
 
   if (character.points <= 0 || opponent.points <= 0) {
     winnerPopup(character.points);
+    character.isGameStarted = false;
+    winnerPopup(character.points);
+    if (character.points === 0 && opponent.points > 0) {
+      character.lost += 1;
+    } else if (character.points === 0 && opponent.points === 0) {
+      character.draw += 1;
+    } else if (character.points > 0 && opponent.points === 0) {
+      character.wins += 1;
+    }
   }
 }

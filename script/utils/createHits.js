@@ -50,6 +50,14 @@ export default function createHits() {
   updateSpheres(character);
 
   if (character.points <= 0 || opponent.points <= 0) {
+    character.isGameStarted = false;
     winnerPopup(character.points);
+    if (character.points === 0 && opponent.points > 0) {
+      character.lost += 1;
+    } else if (character.points === 0 && opponent.points === 0) {
+      character.draw += 1;
+    } else if (character.points > 0 && opponent.points === 0) {
+      character.wins += 1;
+    }
   }
 }
