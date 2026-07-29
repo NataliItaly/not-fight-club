@@ -20,16 +20,6 @@ const startBtn = document.getElementById('create-character');
 if (startBtn) {
   startBtn.addEventListener('click', function () {
     openPopup();
-    /* const popup = document.getElementById('popup');
-    popup.classList.add('popup_open');
-
-    const tabs = document.querySelectorAll('.popup__tab');
-    tabs[0].classList.add('popup__tab_active');
-
-    const characterInput = document.getElementById('character-input');
-    characterInput.value = ''; */
-
-    //resetCharacter();
   });
 }
 
@@ -53,15 +43,13 @@ document.body.addEventListener('click', function (e) {
   }
 
   if (e.target.closest('#start-game-btn')) {
-    const startGameBtn = document.getElementById('start-game-btn');
-    startGameBtn.addEventListener('click', function () {
-      const popup = document.getElementById('popup');
-      popup.classList.remove('popup_open');
+    console.log('start game');
+    const popup = document.getElementById('popup');
+    popup.classList.remove('popup_open');
 
-      const startBtn = document.getElementById('create-character');
-      startBtn.classList.add('main__btn_hidden');
+    const startBtn = document.getElementById('create-character');
+    startBtn.classList.add('main__btn_hidden');
 
-      fightScreen();
-    });
+    fightScreen();
   }
 });

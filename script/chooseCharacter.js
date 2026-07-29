@@ -1,18 +1,19 @@
 import { character, constants } from './state.js';
 import getRandomNumber from './utils/getRandomNumber.js';
-import { tab } from './state.js';
 
 export default function chooseCharacter() {
   const list = document.getElementById('choose-character-list');
 
-  Array.from({ length: 10 }, (_, i) => i + 1).forEach((_, i) => {
-    const li = `
+  Array.from({ length: constants.charactersNumber }, (_, i) => i + 1).forEach(
+    (_, i) => {
+      const li = `
         <li class="list__item list__item_vertical choose-character__item" id=${i + 1}>
           <img class="list__img" src="./assets/aliens/${i + 1}.png" alt="Alien character" />
         </li>
       `;
-    list.insertAdjacentHTML('beforeend', li);
-  });
+      list.insertAdjacentHTML('beforeend', li);
+    },
+  );
 
   list.addEventListener('click', function (e) {
     if (e.target.closest('.list__item')) {
