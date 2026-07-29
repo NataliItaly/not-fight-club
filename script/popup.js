@@ -28,7 +28,7 @@ export default function popup(tab) {
 
       document
         .getElementById('create-character')
-        .classList.add('main__btn_hidden');
+        .classList.remove('main__btn_hidden');
     }
   });
 }
