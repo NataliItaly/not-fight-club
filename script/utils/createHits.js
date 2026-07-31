@@ -43,6 +43,7 @@ export default function createHits() {
   const characterOutput = `<p class="fight__output-text"><strong class="fight__output-character">${character.name}</strong> attacked <strong class="fight__output-opponent">${opponent.name}</strong> to <strong class="fight__output-body">${characterAttack}</strong>${characterResult}</p>`;
   const opponentOutput = `<p class="fight__output-text"><strong class="fight__output-opponent">${opponent.name}</strong> attacked <strong class="fight__output-character">${character.name}</strong> to <strong class="fight__output-body">${opponentAttack}</strong>${opponentResult}</p>`;
 
+  character.gameOutput.push[characterOutput, opponentOutput];
   fightOutput.innerHTML += characterOutput;
   fightOutput.innerHTML += opponentOutput;
 

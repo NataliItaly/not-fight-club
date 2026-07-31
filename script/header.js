@@ -14,7 +14,8 @@ export function header() {
       const profileEl = document.getElementById('profile');
       profileEl.classList.add('profile_open');
       profileEl.innerHTML = '';
-      console.log('profile html', document.getElementById('profile').innerHTML);
+      document.body.classList.add('body_fight');
+      document.getElementById('video').classList.add('video_hidden');
 
       if (character.id) {
         console.log(
@@ -35,6 +36,9 @@ export function header() {
               <p>Draw: <span class="profile__draw">${character.draw}</span></p>
             </div>
             <div class="profile__img-wrapper" id="profile-img-wrapper">
+              <video class="profile__video" id="profile-video" autoplay muted loop playsinline>
+                <source src="./assets/profile-video.mp4" type="video/mp4" />
+              </video>
               <img class="profile__location" src="./assets/locations/${character.location}.webp" alt="${character.location}" />
               <img class="profile__avatar" src="./assets/aliens/${character.id}.png" alt="${character.name}'s profile" />
             </div>
