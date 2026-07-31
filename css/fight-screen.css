@@ -117,10 +117,12 @@
 
 .fight__output-character {
   color: #19f6c7;
+  text-transform: uppercase;
 }
 
 .fight__output-opponent {
   color: #f846ae;
+  text-transform: uppercase;
 }
 
 .fight__output-body {

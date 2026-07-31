@@ -55,6 +55,7 @@ document.body.addEventListener('click', function (e) {
     popup.classList.remove('popup_open');
 
     startBtn.classList.add('main__btn_hidden');
+    initGameBtn.classList.add('main__btn_hidden');
 
     fightScreen();
   }
