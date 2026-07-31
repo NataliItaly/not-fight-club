@@ -11,7 +11,7 @@ import openPopup from './utils/openPopup.js';
 
 const initGameBtn = document.getElementById('init-game');
 initGameBtn.addEventListener('click', function () {
-  document.getElementById('fight-screen').classList.add('fight_active');
+  fightScreen();
 });
 
 const startBtn = document.getElementById('create-character');

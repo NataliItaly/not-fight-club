@@ -18,28 +18,3 @@ export default function createSpheres(fighter) {
 
   return spheresHtml + healthEffect;
 }
-
-/**
-   *        <div class="health__sphere" id="sphere1"></div>
-            <div class="health__sphere" id="sphere2"></div>
-            <div class="health__sphere" id="sphere3"></div>
-            <div class="health__sphere" id="sphere4"></div>
-            <div class="health__sphere" id="sphere5"></div>
-            <div class="health__sphere" id="sphere6"></div>
-            <div class="health__sphere" id="sphere7"></div>
-            <div class="health__sphere" id="sphere8"></div>
-            <div class="health__sphere" id="sphere9"></div>
-            <div class="health__sphere" id="sphere10"></div>
-            <div class="health__effect">
-                <div class="health__shadow" id="shadow1"></div>
-                <div class="health__shadow" id="shadow2"></div>
-                <div class="health__shadow" id="shadow3"></div>
-                <div class="health__shadow" id="shadow4"></div>
-                <div class="health__shadow" id="shadow5"></div>
-                <div class="health__shadow" id="shadow6"></div>
-                <div class="health__shadow" id="shadow7"></div>
-                <div class="health__shadow" id="shadow8"></div>
-                <div class="health__shadow" id="shadow9"></div>
-                <div class="health__shadow" id="shadow10"></div>
-            </div>
-   */
