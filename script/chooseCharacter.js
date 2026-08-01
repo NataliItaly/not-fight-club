@@ -1,13 +1,18 @@
-import { character, constants } from './state.js';
+import { character, constants, saveGame } from './state.js';
 import getRandomNumber from './utils/getRandomNumber.js';
 
 export default function chooseCharacter() {
+  const chooseCharacterBtn = document.getElementById('choose-character-btn');
+  chooseCharacterBtn.disabled = !character.id;
+
   const list = document.getElementById('choose-character-list');
 
   Array.from({ length: constants.charactersNumber }, (_, i) => i + 1).forEach(
     (_, i) => {
+      const currentClass = character.id == i + 1 ? 'list__item_active' : '';
+
       const li = `
-        <li class="list__item list__item_vertical choose-character__item" id=${i + 1}>
+        <li class="list__item list__item_vertical ${currentClass} choose-character__item" id=${i + 1}>
           <img class="list__img" src="./assets/aliens/${i + 1}.png" alt="Alien character" />
         </li>
       `;
@@ -20,7 +25,9 @@ export default function chooseCharacter() {
       const listItems = list.querySelectorAll('.list__item');
       listItems.forEach((item) => item.classList.remove('list__item_active'));
       e.target.closest('.list__item').classList.add('list__item_active');
+
       character.id = e.target.closest('.list__item').id;
+      saveGame();
       if (character.id) {
         document.getElementById('choose-character-btn').disabled = false;
       }
@@ -31,5 +38,6 @@ export default function chooseCharacter() {
   randomBtn.addEventListener('click', function () {
     const randomNum = getRandomNumber(constants.charactersNumber);
     character.id = randomNum + 1;
+    saveGame();
   });
 }

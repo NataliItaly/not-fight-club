@@ -1,4 +1,4 @@
-import { character } from './state.js';
+import { character, saveGame } from './state.js';
 
 export default function popup(tab) {
   const popup = document.getElementById('popup');
@@ -25,6 +25,7 @@ export default function popup(tab) {
 
       if (tab.index <= 3) {
         tab.index += 1;
+
         const currentTab = tabs[tab.index];
         currentTab.classList.add('popup__tab_active');
       } else {
@@ -49,8 +50,11 @@ export default function popup(tab) {
       tabs.forEach((t) => t.classList.remove('popup__tab_active'));
       popup.classList.remove('popup_open');
       tab.index = 0;
+    }
+  });
+}
 
-      if (character.id && character.name && character.location) {
+/*  if (character.id && character.name && character.location) {
         document
           .getElementById('create-character')
           .classList.add('main__btn_hidden');
@@ -58,7 +62,4 @@ export default function popup(tab) {
         document
           .getElementById('init-game')
           .classList.remove('main__btn_hidden');
-      }
-    }
-  });
-}
+      } */

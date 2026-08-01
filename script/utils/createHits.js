@@ -1,4 +1,4 @@
-import { character, opponent } from '../state.js';
+import { character, opponent, saveGame } from '../state.js';
 import updateSpheres from './updateSpheres.js';
 import updatePoints from './updatePoints.js';
 import winnerPopup from '../winnerPopup.js';
@@ -61,4 +61,6 @@ export default function createHits() {
       character.wins += 1;
     }
   }
+
+  saveGame();
 }

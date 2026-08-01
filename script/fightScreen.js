@@ -12,7 +12,9 @@ export default function fightScreen() {
     createOpponent();
   }
 
-  const fighterElems = document.querySelectorAll('.fighter');
+  const fighterElems = document.querySelectorAll('.fight__fighter');
+  console.log('fighterElems', fighterElems);
+  console.log('Opponent state', opponent);
   fighterElems.forEach((el) => (el.innerHTML = ''));
 
   fighterElems[0].innerHTML = createFighter(character);
@@ -52,4 +54,6 @@ export default function fightScreen() {
       createCriticalHits();
     }
   });
+
+  console.log(createFighter(opponent));
 }

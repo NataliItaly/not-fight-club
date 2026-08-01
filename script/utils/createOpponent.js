@@ -1,4 +1,4 @@
-import { constants, opponent } from '../state.js';
+import { constants, opponent, saveGame } from '../state.js';
 import getRandomNumber from './getRandomNumber.js';
 
 export default function createOpponent() {
@@ -7,5 +7,6 @@ export default function createOpponent() {
   opponent.id = getRandomNumber(constants.charactersNumber, 1);
   opponent.name = names[getRandomNumber(names.length - 1)];
 
+  saveGame();
   console.log('opponent', opponent);
 }
