@@ -15,7 +15,7 @@ export function header() {
       profileEl.classList.add('profile_open');
       profileEl.innerHTML = '';
       document.body.classList.add('body_fight');
-      document.getElementById('video').classList.add('video_hidden');
+      document.getElementById('video-bg').classList.add('video_hidden');
 
       if (character.id) {
         console.log(

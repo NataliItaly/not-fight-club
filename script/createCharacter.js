@@ -3,6 +3,8 @@ import escapeHtml from './utils/escapeHtml.js';
 
 export default function createCharacter() {
   const characterInput = document.getElementById('character-input');
+  console.log(character);
+  if (character.name) characterInput.value = character.name;
 
   characterInput.addEventListener('input', function (e) {
     const name = escapeHtml(characterInput.value).trim();

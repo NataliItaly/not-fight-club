@@ -7,10 +7,7 @@
   color: inherit;
   box-sizing: border-box;
 }
-/*
-blue #19f6c7
-#c90677 #c90677
-*/
+
 body {
   min-height: 100vh;
   display: flex;

@@ -37,28 +37,28 @@
     #79f3d9 0%,
     #01ad88 50%,
     #79f3d9 100%
-  ); /* Chrome10+, Safari5.1+ */
+  );
   background: -moz-radial-gradient(
     10% 10%,
     ellipse cover,
     #79f3d9 0%,
     #01ad88 50%,
     #79f3d9 100%
-  ); /* FF3.6+ */
+  );
   background: -o-radial-gradient(
     10% 10%,
     ellipse cover,
     #79f3d9 0%,
     #01ad88 50%,
     #79f3d9 100%
-  ); /* Opera 12+ */
+  );
   background: -ms-radial-gradient(
     10% 10%,
     ellipse cover,
     #79f3d9 0%,
     #01ad88 50%,
     #79f3d9 100%
-  ); /* IE10+ */
+  );
   background: radial-gradient(ellipse at center, #79f3d9, #01ad88 50% #79f3d9);
 }
 
@@ -69,28 +69,28 @@
     #96f747 0%,
     #008026 50%,
     #96f747 100%
-  ); /* Chrome10+, Safari5.1+ */
+  );
   background: -moz-radial-gradient(
     10% 10%,
     ellipse cover,
     #96f747 0%,
     #008026 50%,
     #96f747 100%
-  ); /* FF3.6+ */
+  );
   background: -o-radial-gradient(
     10% 10%,
     ellipse cover,
     #96f747 0%,
     #008026 50%,
     #96f747 100%
-  ); /* Opera 12+ */
+  );
   background: -ms-radial-gradient(
     10% 10%,
     ellipse cover,
     #96f747 0%,
     #008026 50%,
     #96f747 100%
-  ); /* IE10+ */
+  );
   background: radial-gradient(ellipse at center, #96f747, #008026 50% #96f747);
 }
 
@@ -101,28 +101,28 @@
     #d7f747 0%,
     #fa6603 50%,
     #d7f747 100%
-  ); /* Chrome10+, Safari5.1+ */
+  );
   background: -moz-radial-gradient(
     10% 10%,
     ellipse cover,
     #d7f747 0%,
     #fa6603 50%,
     #d7f747 100%
-  ); /* FF3.6+ */
+  );
   background: -o-radial-gradient(
     10% 10%,
     ellipse cover,
     #d7f747 0%,
     #fa6603 50%,
     #d7f747 100%
-  ); /* Opera 12+ */
+  );
   background: -ms-radial-gradient(
     10% 10%,
     ellipse cover,
     #d7f747 0%,
     #fa6603 50%,
     #d7f747 100%
-  ); /* IE10+ */
+  );
   background: radial-gradient(ellipse at center, #d7f747, #fa6603 50% #d7f747);
 }
 
@@ -133,28 +133,28 @@
     #f83a6a 0%,
     #dd011f 50%,
     #f83a6a 100%
-  ); /* Chrome10+, Safari5.1+ */
+  );
   background: -moz-radial-gradient(
     10% 10%,
     ellipse cover,
     #f83a6a 0%,
     #dd011f 50%,
     #f83a6a 100%
-  ); /* FF3.6+ */
+  );
   background: -o-radial-gradient(
     10% 10%,
     ellipse cover,
     #f83a6a 0%,
     #dd011f 50%,
     #f83a6a 100%
-  ); /* Opera 12+ */
+  );
   background: -ms-radial-gradient(
     10% 10%,
     ellipse cover,
     #f83a6a 0%,
     #dd011f 50%,
     #f83a6a 100%
-  ); /* IE10+ */
+  );
   background: radial-gradient(ellipse at center, #f83a6a, #dd011f 50% #f83a6a);
 }
 
