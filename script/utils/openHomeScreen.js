@@ -4,7 +4,13 @@ import { character } from '../state.js';
 export default function openHomeScreen() {
   closeScreens();
 
-  if (character.isGameStarted) {
+  document.body.classList.remove('body_fight');
+  document.getElementById('video-bg').classList.remove('video_hidden');
+
+  if (
+    character.isGameStarted ||
+    (character.id && character.name && character.location)
+  ) {
     document.getElementById('init-game').classList.remove('main__btn_hidden');
 
     document

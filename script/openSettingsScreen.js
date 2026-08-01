@@ -10,4 +10,6 @@ export default function openSettingsScreen() {
 
   document.getElementById('fight-screen').classList.remove('fight_active');
   document.getElementById('profile').classList.remove('profile_open');
+  document.body.classList.remove('body_fight');
+  document.getElementById('video-bg').classList.remove('video_hidden');
 }

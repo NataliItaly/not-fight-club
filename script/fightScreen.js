@@ -8,11 +8,16 @@ import createCriticalHits from './utils/createCriticalHits.js';
 import createSpheres from './utils/createSpheres.js';
 
 export default function fightScreen() {
-  const hero = createFighter(character);
-  createSpheres(character);
+  if (!opponent.name && !opponent.id) {
+    createOpponent();
+  }
 
-  createOpponent();
-  const enemy = createFighter(opponent);
+  const fighterElems = document.querySelectorAll('.fighter');
+  fighterElems.forEach((el) => (el.innerHTML = ''));
+
+  fighterElems[0].innerHTML = createFighter(character);
+  createSpheres(character);
+  fighterElems[1].innerHTML = createFighter(opponent);
   createSpheres(opponent);
 
   document.body.classList.add('body_fight');
@@ -20,10 +25,6 @@ export default function fightScreen() {
 
   const fightScreenEl = document.getElementById('fight-screen');
   fightScreenEl.classList.add('fight_active');
-
-  const fightZonesEl = document.getElementById('fight-zones');
-  fightZonesEl.insertAdjacentHTML('afterbegin', hero);
-  fightZonesEl.insertAdjacentHTML('beforeend', enemy);
 
   createRadioInputs('defence');
   createRadioInputs('attack');

@@ -11,7 +11,11 @@ import openPopup from './utils/openPopup.js';
 
 const initGameBtn = document.getElementById('init-game');
 initGameBtn.addEventListener('click', function () {
+  character.isGameStarted = true;
   fightScreen();
+  initGameBtn.classList.add('main__btn_hidden');
+
+  console.log(character);
 });
 
 const startBtn = document.getElementById('create-character');
@@ -20,6 +24,10 @@ startBtn.addEventListener('click', function () {
 });
 
 const fightScreenEl = document.getElementById('fight-screen');
+if (fightScreenEl.classList.contains('fight_active')) {
+  document.body.classList.add('body_fight');
+  document.getElementById('video-bg').classList.add('video_hidden');
+}
 
 if (character.isGameStarted) {
   initGameBtn.classList.remove('main__btn_hidden');
@@ -45,7 +53,8 @@ document.body.addEventListener('click', function (e) {
   }
 
   if (e.target.closest('#edit-profile')) {
-    openSettingsScreen();
+    //openSettingsScreen();
+    openPopup();
   }
 
   if (e.target.closest('#start-game-btn')) {
@@ -53,6 +62,9 @@ document.body.addEventListener('click', function (e) {
 
     const popup = document.getElementById('popup');
     popup.classList.remove('popup_open');
+
+    const profile = document.getElementById('profile');
+    profile.classList.remove('profile_open');
 
     startBtn.classList.add('main__btn_hidden');
     initGameBtn.classList.add('main__btn_hidden');
@@ -63,5 +75,8 @@ document.body.addEventListener('click', function (e) {
   if (e.target.closest('#return-to-game')) {
     document.getElementById('profile').classList.remove('profile_open');
     fightScreenEl.classList.add('fight_active');
+
+    startBtn.classList.add('main__btn_hidden');
+    initGameBtn.classList.add('main__btn_hidden');
   }
 });

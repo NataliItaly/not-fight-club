@@ -3,7 +3,7 @@ import { character } from './state.js';
 
 export default function characterView() {
   const characterViewer = document.getElementById('character-view');
-  characterView.innerHTML = '';
+  characterViewer.innerHTML = '';
 
   if (character.id && character.name && character.location) {
     const locationDescription = locations.find(
