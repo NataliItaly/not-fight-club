@@ -1,24 +1,34 @@
 import { header } from './header.js';
 import locationsPopup from './locationsPopup.js';
-import { tab, character } from './state.js';
+import { tab, character, loadGame, saveGame } from './state.js';
 import popup from './popup.js';
 import chooseCharacter from './chooseCharacter.js';
 import createCharacter from './createCharacter.js';
 import openHomeScreen from './utils/openHomeScreen.js';
-import openSettingsScreen from './openSettingsScreen.js';
 import fightScreen from './fightScreen.js';
 import openPopup from './utils/openPopup.js';
 
+loadGame();
+
 const initGameBtn = document.getElementById('init-game');
+const startBtn = document.getElementById('create-character');
+
+if (character.id && character.name && character.location) {
+  console.log('character exist');
+  initGameBtn.classList.remove('main__btn_hidden');
+  startBtn.classList.add('main__btn_hidden');
+}
+
 initGameBtn.addEventListener('click', function () {
   character.isGameStarted = true;
+  saveGame();
+
   fightScreen();
   initGameBtn.classList.add('main__btn_hidden');
 
   console.log(character);
 });
 
-const startBtn = document.getElementById('create-character');
 startBtn.addEventListener('click', function () {
   openPopup();
 });
@@ -32,10 +42,10 @@ if (fightScreenEl.classList.contains('fight_active')) {
 if (character.isGameStarted) {
   initGameBtn.classList.remove('main__btn_hidden');
   startBtn.classList.add('main__btn_hidden');
-} else {
+} /* else {
   startBtn.classList.remove('main__btn_hidden');
   initGameBtn.classList.add('main__btn_hidden');
-}
+} */
 
 header();
 popup(tab);
@@ -53,7 +63,6 @@ document.body.addEventListener('click', function (e) {
   }
 
   if (e.target.closest('#edit-profile')) {
-    //openSettingsScreen();
     openPopup();
   }
 

@@ -1,9 +1,12 @@
 import { locations } from './data/location.js';
-import { character, constants } from './state.js';
+import { character, constants, saveGame } from './state.js';
 import getRandomNumber from './utils/getRandomNumber.js';
 import characterView from './characterView.js';
 
 export default function locationsPopup() {
+  const locationBtn = document.getElementById('submit-game');
+  locationBtn.disabled = !character.location;
+
   const list = document.getElementById('locations-list');
   locations.forEach((loc) => {
     const li = `
@@ -17,6 +20,7 @@ export default function locationsPopup() {
   list.addEventListener('click', function (e) {
     if (e.target.closest('.list__item')) {
       character.location = e.target.closest('.list__item').id;
+      saveGame();
       const listItems = list.querySelectorAll('.list__item');
 
       listItems.forEach((item) => item.classList.add('list__item_fade'));
@@ -30,6 +34,7 @@ export default function locationsPopup() {
   randomBtn.addEventListener('click', function () {
     const randomNum = getRandomNumber(constants.locationsNumber);
     character.location = locations[randomNum].id;
+    saveGame();
     characterView();
   });
 

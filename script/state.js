@@ -1,3 +1,5 @@
+export const screens = ['home', 'popup', 'fight-screen'];
+
 export const character = {
   id: '',
   name: '',
@@ -10,6 +12,7 @@ export const character = {
   draw: 0,
   isGameStarted: false,
   gameOutput: [],
+  currentScreen: '',
 };
 
 export const opponent = {
@@ -27,11 +30,12 @@ export const tab = {
 export const gameState = {
   character,
   opponent,
-  ui: {
+};
+/**
+ * ui: {
     tab,
   },
-};
-
+ */
 export function saveGame() {
   localStorage.setItem('gameState', JSON.stringify(gameState));
 }
@@ -41,11 +45,15 @@ export function loadGame() {
 
   if (!saved) return;
 
-  const state = JSON.parse(saved);
+  try {
+    const state = JSON.parse(saved);
 
-  Object.assign(character, state.character);
-  Object.assign(opponent, state.opponent);
-  Object.assign(tab, state.tab);
+    if (state.character) Object.assign(character, state.character);
+    if (state.opponent) Object.assign(opponent, state.opponent);
+    //if (state.ui?.tab) Object.assign(tab, state.ui.tab);
+  } catch (err) {
+    console.error('Cannot load saved game', err);
+  }
 }
 
 export const constants = {
