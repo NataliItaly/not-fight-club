@@ -25,13 +25,13 @@
   align-items: center;
   gap: 30px;
   text-align: center;
-  padding: 20px;
+  padding: 40px;
   border-radius: 10px;
   position: relative;
 }
 
 .winner__content_win {
-  background: #c90677;
+  background: #f158b1;
 }
 
 .winner__content_lost {
@@ -40,17 +40,4 @@
 
 .winner__content_draw {
   background: yellow;
-}
-
-.winner__close {
-  position: absolute;
-  top: 0;
-  right: 0;
-  background: transparent;
-  padding: 10px;
-  cursor: pointer;
-}
-
-.winner__close img {
-  width: 20px;
 }

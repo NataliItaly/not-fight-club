@@ -18,11 +18,6 @@ export function header() {
       document.getElementById('video-bg').classList.add('video_hidden');
 
       if (character.id) {
-        console.log(
-          'profile html',
-          document.getElementById('profile').innerHTML,
-        );
-
         const returnToGameBtn = character.isGameStarted
           ? `<button class="btn profile__game-btn" id="return-to-game">
               Return to Game
