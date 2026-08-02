@@ -15,7 +15,7 @@ export default function createFighter(fighter) {
             ${createSpheres(fighter)}
           </div>
         </div>
-        <div class="health__value" id="health-value-${fighter.name}-${fighter.id}">100%</div>
+        <div class="health__value" id="health-value-${fighter.name}-${fighter.id}">${fighter.points}%</div>
       </div>
     </div>
   `;

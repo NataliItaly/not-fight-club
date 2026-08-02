@@ -31,11 +31,7 @@ export const gameState = {
   character,
   opponent,
 };
-/**
- * ui: {
-    tab,
-  },
- */
+
 export function saveGame() {
   localStorage.setItem('gameState', JSON.stringify(gameState));
 }

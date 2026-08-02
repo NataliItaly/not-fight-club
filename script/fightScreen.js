@@ -4,7 +4,6 @@ import createOpponent from './utils/createOpponent.js';
 import createRadioInputs from './utils/createRadioInputs.js';
 import updateInputs from './utils/updateInputs.js';
 import createHits from './utils/createHits.js';
-import createCriticalHits from './utils/createCriticalHits.js';
 import createSpheres from './utils/createSpheres.js';
 
 export default function fightScreen() {
@@ -13,8 +12,6 @@ export default function fightScreen() {
   }
 
   const fighterElems = document.querySelectorAll('.fight__fighter');
-  console.log('fighterElems', fighterElems);
-  console.log('Opponent state', opponent);
   fighterElems.forEach((el) => (el.innerHTML = ''));
 
   fighterElems[0].innerHTML = createFighter(character);
@@ -42,18 +39,16 @@ export default function fightScreen() {
   });
 
   const fightBtn = document.getElementById('fight');
+  fightBtn.disabled =
+    character.defenceZones.length < 2 && character.attackZones.length < 1;
   fightBtn.addEventListener('click', function () {
     if (character.points > 0 && opponent.points > 0) {
       createHits();
     }
   });
 
-  const criticalBtn = document.getElementById('critical-btn');
-  criticalBtn.addEventListener('click', function () {
-    if (character.points > 0 && opponent.points > 0) {
-      createCriticalHits();
-    }
-  });
-
-  console.log(createFighter(opponent));
+  const fightOutputEl = document.getElementById('fight-output');
+  fightOutputEl.innerHTML = '';
+  console.log('output', character.gameOutput);
+  character.gameOutput.forEach((out) => (fightOutputEl.innerHTML += out));
 }

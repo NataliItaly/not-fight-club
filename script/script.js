@@ -14,7 +14,6 @@ const initGameBtn = document.getElementById('init-game');
 const startBtn = document.getElementById('create-character');
 
 if (character.id && character.name && character.location) {
-  console.log('character exist');
   initGameBtn.classList.remove('main__btn_hidden');
   startBtn.classList.add('main__btn_hidden');
 }
@@ -25,8 +24,6 @@ initGameBtn.addEventListener('click', function () {
 
   fightScreen();
   initGameBtn.classList.add('main__btn_hidden');
-
-  console.log(character);
 });
 
 startBtn.addEventListener('click', function () {

@@ -1,3 +1,4 @@
+import { character, opponent } from './state.js';
 import openHomeScreen from './utils/openHomeScreen.js';
 
 export default function winnerPopup(result, opponentResult) {
@@ -17,15 +18,18 @@ export default function winnerPopup(result, opponentResult) {
         ? 'You are the Lord of Universe'
         : 'You are lost';
 
-  const closeBtn = document.getElementById('winner-close-btn');
-  closeBtn.addEventListener('click', function () {
-    winnerEl.classList.remove('winner_open');
-  });
-
   const backBtn = document.getElementById('back-to-main');
   backBtn.addEventListener('click', function () {
     winnerEl.classList.remove('winner_open');
     document.getElementById('fight-screen').classList.remove('fight_active');
     openHomeScreen();
+    character.points = 100;
+    character.attackZones = [];
+    character.defenceZones = [];
+    character.gameOutput = [];
+
+    opponent.points = 100;
+    opponent.attackZones = [];
+    opponent.defenceZones = [];
   });
 }

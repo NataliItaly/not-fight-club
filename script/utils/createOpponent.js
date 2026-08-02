@@ -8,5 +8,4 @@ export default function createOpponent() {
   opponent.name = names[getRandomNumber(names.length - 1)];
 
   saveGame();
-  console.log('opponent', opponent);
 }
