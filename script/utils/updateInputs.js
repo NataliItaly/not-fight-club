@@ -13,28 +13,13 @@ export default function updateInputs() {
   const selected = document.querySelector('input[name="attack"]:checked');
 
   const fightBtn = document.getElementById('fight');
-  //const criticalBtn = document.getElementById('critical-btn');
+
   if (selected && checked.length === 2) {
     character.attackZones = [selected.value];
     character.defenceZones = [...checked.map((el) => el.value)];
 
-    opponent.attackZones = [
-      constants.body[getRandomNumber(constants.body.length - 1)],
-    ];
-
-    const defenceZones = [];
-    while (defenceZones.length < 2) {
-      const n = getRandomNumber(constants.body.length - 1);
-      if (!defenceZones.includes(n)) {
-        defenceZones.push(n);
-      }
-    }
-    opponent.defenceZones = defenceZones.map((el) => constants.body[el]);
-
     fightBtn.disabled = false;
-    //criticalBtn.disabled = false;
   } else {
     fightBtn.disabled = true;
-    //criticalBtn.disabled = true;
   }
 }

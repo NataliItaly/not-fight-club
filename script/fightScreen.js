@@ -49,6 +49,6 @@ export default function fightScreen() {
 
   const fightOutputEl = document.getElementById('fight-output');
   fightOutputEl.innerHTML = '';
-  console.log('output', character.gameOutput);
+
   character.gameOutput.forEach((out) => (fightOutputEl.innerHTML += out));
 }

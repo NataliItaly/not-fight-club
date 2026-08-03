@@ -2,8 +2,14 @@ import { character, opponent, saveGame } from '../state.js';
 import updateSpheres from './updateSpheres.js';
 import updatePoints from './updatePoints.js';
 import winnerPopup from '../winnerPopup.js';
+import createRandomZones from './createRandomZones.js';
 
 export default function createHits() {
+  const opponentZones = createRandomZones();
+  opponent.attackZones = opponentZones[0];
+  opponent.defenceZones = opponentZones[1];
+  console.log('opponent', opponent);
+
   const fightOutput = document.getElementById('fight-output');
 
   const characterAttack = character.attackZones[0];
