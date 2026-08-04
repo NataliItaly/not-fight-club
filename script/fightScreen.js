@@ -41,11 +41,6 @@ export default function fightScreen() {
   const fightBtn = document.getElementById('fight');
   fightBtn.disabled =
     character.defenceZones.length < 2 && character.attackZones.length < 1;
-  fightBtn.addEventListener('click', function () {
-    if (character.points > 0 && opponent.points > 0) {
-      createHits();
-    }
-  });
 
   const fightOutputEl = document.getElementById('fight-output');
   fightOutputEl.innerHTML = '';

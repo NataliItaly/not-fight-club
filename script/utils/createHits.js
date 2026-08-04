@@ -5,6 +5,7 @@ import winnerPopup from '../winnerPopup.js';
 import createRandomZones from './createRandomZones.js';
 
 export default function createHits() {
+  console.log('createHits called');
   const opponentZones = createRandomZones();
   opponent.attackZones = opponentZones[0];
   opponent.defenceZones = opponentZones[1];
@@ -59,6 +60,10 @@ export default function createHits() {
   if (character.points <= 0 || opponent.points <= 0) {
     character.isGameStarted = false;
     winnerPopup(character.points);
+    opponent.name = '';
+    opponent.id = '';
+    opponent.attackZones = [];
+    opponent.defenceZones = [];
     if (character.points === 0 && opponent.points > 0) {
       character.lost += 1;
     } else if (character.points === 0 && opponent.points === 0) {
