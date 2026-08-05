@@ -31,8 +31,8 @@
 
 .popup__close {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 50px;
+  right: 50px;
   padding: 10px;
   cursor: pointer;
   background: transparent;

@@ -1,35 +1,22 @@
-import { character, opponent } from './state.js';
-import openHomeScreen from './utils/openHomeScreen.js';
+import playSound from './utils/playSound.js';
 
 export default function winnerPopup(result, opponentResult) {
   const winnerEl = document.getElementById('winner-popup');
   winnerEl.classList.add('winner_open');
-
   const winnerContent = document.getElementById('winner-content');
-  winnerContent.classList.add(
-    `${result === 0 && opponentResult === 0 ? 'winner__content_draw' : result > 0 ? 'winner__content_win' : 'winner__content_lost'}`,
-  );
-
   const winnerTitle = document.getElementById('winner-title');
-  winnerTitle.textContent =
-    result === 0 && opponentResult === 0
-      ? 'Draw'
-      : result > 0
-        ? 'You are the Lord of Universe'
-        : 'You are lost';
 
-  const backBtn = document.getElementById('back-to-main');
-  backBtn.addEventListener('click', function () {
-    winnerEl.classList.remove('winner_open');
-    document.getElementById('fight-screen').classList.remove('fight_active');
-    openHomeScreen();
-    character.points = 100;
-    character.attackZones = [];
-    character.defenceZones = [];
-    character.gameOutput = [];
-
-    opponent.points = 100;
-    opponent.attackZones = [];
-    opponent.defenceZones = [];
-  });
+  if (result <= 0 && opponentResult <= 0) {
+    winnerContent.classList.add('winner__content_draw');
+    playSound('draw');
+    winnerTitle.textContent = 'Draw';
+  } else if (result > 0 && opponentResult <= 0) {
+    winnerContent.classList.add('winner__content_win');
+    playSound('win');
+    winnerTitle.textContent = 'You are the Lord of Universe';
+  } else if (result <= 0 && opponentResult > 0) {
+    winnerContent.classList.add('winner__content_lost');
+    playSound('lost');
+    winnerTitle.textContent = 'You are lost';
+  }
 }

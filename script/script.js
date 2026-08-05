@@ -8,6 +8,7 @@ import openHomeScreen from './utils/openHomeScreen.js';
 import fightScreen from './fightScreen.js';
 import openPopup from './utils/openPopup.js';
 import createHits from './utils/createHits.js';
+import resetGame from './utils/resetGame.js';
 
 loadGame();
 
@@ -90,5 +91,12 @@ document.body.addEventListener('click', function (e) {
 
     startBtn.classList.add('main__btn_hidden');
     initGameBtn.classList.add('main__btn_hidden');
+  }
+
+  if (e.target.closest('#back-to-main')) {
+    document.getElementById('winner-popup').classList.remove('winner_open');
+    document.getElementById('fight-screen').classList.remove('fight_active');
+    openHomeScreen();
+    resetGame();
   }
 });
