@@ -100,11 +100,6 @@ export default function createHits() {
   if (character.points <= 0 || opponent.points <= 0) {
     character.isGameStarted = false;
 
-    /* opponent.name = '';
-    opponent.id = '';
-    opponent.attackZones = [];
-    opponent.defenceZones = []; */
-
     setTimeout(() => {
       winnerPopup(character.points, opponent.points);
     }, 500);
