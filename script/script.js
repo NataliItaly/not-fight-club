@@ -1,12 +1,14 @@
 import { header } from './header.js';
 import locationsPopup from './locationsPopup.js';
-import { tab, character, loadGame, saveGame } from './state.js';
+import { tab, character, opponent, loadGame, saveGame } from './state.js';
 import popup from './popup.js';
 import chooseCharacter from './chooseCharacter.js';
 import createCharacter from './createCharacter.js';
 import openHomeScreen from './utils/openHomeScreen.js';
 import fightScreen from './fightScreen.js';
 import openPopup from './utils/openPopup.js';
+import createHits from './utils/createHits.js';
+import resetGame from './utils/resetGame.js';
 
 loadGame();
 
@@ -39,10 +41,15 @@ if (fightScreenEl.classList.contains('fight_active')) {
 if (character.isGameStarted) {
   initGameBtn.classList.remove('main__btn_hidden');
   startBtn.classList.add('main__btn_hidden');
-} /* else {
-  startBtn.classList.remove('main__btn_hidden');
-  initGameBtn.classList.add('main__btn_hidden');
-} */
+}
+
+const fightBtn = document.getElementById('fight');
+fightBtn.addEventListener('click', function () {
+  console.log('fight button');
+  if (character.points > 0 && opponent.points > 0) {
+    createHits();
+  }
+});
 
 header();
 popup(tab);
@@ -84,5 +91,12 @@ document.body.addEventListener('click', function (e) {
 
     startBtn.classList.add('main__btn_hidden');
     initGameBtn.classList.add('main__btn_hidden');
+  }
+
+  if (e.target.closest('#back-to-main')) {
+    document.getElementById('winner-popup').classList.remove('winner_open');
+    document.getElementById('fight-screen').classList.remove('fight_active');
+    openHomeScreen();
+    resetGame();
   }
 });

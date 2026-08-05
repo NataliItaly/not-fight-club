@@ -46,7 +46,6 @@ export function loadGame() {
 
     if (state.character) Object.assign(character, state.character);
     if (state.opponent) Object.assign(opponent, state.opponent);
-    //if (state.ui?.tab) Object.assign(tab, state.ui.tab);
   } catch (err) {
     console.error('Cannot load saved game', err);
   }

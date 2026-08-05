@@ -53,13 +53,3 @@ export default function popup(tab) {
     }
   });
 }
-
-/*  if (character.id && character.name && character.location) {
-        document
-          .getElementById('create-character')
-          .classList.add('main__btn_hidden');
-
-        document
-          .getElementById('init-game')
-          .classList.remove('main__btn_hidden');
-      } */
