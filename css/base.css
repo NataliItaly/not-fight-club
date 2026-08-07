@@ -7,10 +7,7 @@
   color: inherit;
   box-sizing: border-box;
 }
-/*
-blue #19f6c7
-#c90677 #c90677
-*/
+
 body {
   min-height: 100vh;
   display: flex;
@@ -24,7 +21,9 @@ body {
 }
 
 .body_fight {
-  background: url(../assets/fight-bg.jpg) no-repeat center / cover;
+  background:
+    url(../assets/fight-bg.jpg) no-repeat center / cover,
+    #000;
 }
 
 .video {
@@ -77,6 +76,19 @@ body {
 .btn:hover::after {
   opacity: 1;
   animation: button-slide 0.6s ease-in forwards;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.btn_variant {
+  background: linear-gradient(45deg, yellow, orangered);
+}
+
+.btn_variant::after {
+  background: linear-gradient(45deg, yellow, orangered);
 }
 
 @keyframes button-slide {

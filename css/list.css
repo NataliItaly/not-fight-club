@@ -26,12 +26,12 @@
   flex: 0 0 150px;
   height: 200px;
   background: #643f82;
-  --f: 0.1; /* коэффициент параллакса (чем меньше, тем лучше) */
-  --r: 10px; /* радиус */
+  --f: 0.1;
+  --r: 10px;
 
   --_f: calc(100% * var(--f)/(1 + var(--f)));
   --_a: calc(90deg * var(--f));
-  width: 250px; /* размер изображения */
+  width: 250px;
   aspect-ratio: calc(1 + var(--f));
   object-fit: cover;
   clip-path: inset(0 var(--_f) 0 0 round var(--r));

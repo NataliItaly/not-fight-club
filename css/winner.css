@@ -1,0 +1,43 @@
+.winner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.winner_open {
+  display: flex;
+}
+
+.winner__content {
+  max-width: 60%;
+  min-width: 300px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  text-align: center;
+  padding: 40px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.winner__content_win {
+  background: #f158b1;
+}
+
+.winner__content_lost {
+  background: #7a0192;
+}
+
+.winner__content_draw {
+  background: yellow;
+}

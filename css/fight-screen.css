@@ -1,9 +1,12 @@
-.fight-screen {
+.fight {
   display: none;
-  opacity: 0;
 }
 
-.fight-screen_active {
+.fight_active {
+  display: block;
+}
+
+.fight__zones {
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -27,7 +30,7 @@
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  padding-top: 80px;
+  padding-top: 120px;
 }
 
 .fighter__img {
@@ -66,8 +69,79 @@
 .fight__title {
   text-align: center;
   font-size: 20px;
+  margin-bottom: 20px;
 }
 
 .fight__zone {
-  max-width: 300px;
+  min-width: 300px;
+}
+
+.fight__settings {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.fight__btn-wrapper {
+  width: 100%;
+  display: flex;
+  gap: 40px;
+}
+
+.fight__btn {
+  font-size: 18px;
+  margin: 0 auto;
+}
+
+.fight__radio {
+}
+
+.fight__type-title {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.fight__label {
+  display: block;
+  font-size: 15px;
+  font-family: 'Josefin Sans', sans-serif;
+  margin-bottom: 10px;
+}
+
+.fight__output {
+  font-family: 'Josefin Sans', sans-serif;
+  text-align: center;
+  line-height: 1.5;
+  margin-bottom: 50px;
+}
+
+.fight__output-character {
+  color: #19f6c7;
+  text-transform: uppercase;
+}
+
+.fight__output-opponent {
+  color: #f846ae;
+  text-transform: uppercase;
+}
+
+.fight__output-body {
+  color: #33f75d;
+}
+
+.fight__output-result {
+  color: #fac73a;
+}
+
+.fight__output-critical {
+  color: red;
+}
+
+.fight__critical-btn {
+  font-size: 18px;
+  background: linear-gradient(45deg, #f17bf5, #c90677);
+}
+
+.fight__critical-btn::after {
+  background: linear-gradient(45deg, #f17bf5, #c90677);
 }
